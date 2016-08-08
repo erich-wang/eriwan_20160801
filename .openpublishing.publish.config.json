@@ -13,8 +13,11 @@
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
-        "RestApi": "Content"
-      }
+        "RestApi": "Content",
+        "AzureCli": "Content"
+        },
+      "build_entry_point": "docs",
+      "customized_template_paths": ["azurecli/azurecli"]        
     }
   ],
   "notification_subscribers": [],
@@ -27,5 +30,13 @@
       "branch": "master",
       "branch_mapping": {}
     }
-  ]
+  ],
+    "dependent_packages": [
+    {
+      "path_to_root": "azurecli",
+      "id": "opbuild.templates.azurecli",
+      "version": "1.16.0-alpha-008-g2699717",
+      "nuget_feed": "https://www.myget.org/F/op-dev/api/v2"
+    }
+   ]
 }

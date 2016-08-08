@@ -3,6 +3,7 @@
     "content": [
       {
         "files": [
+          "**/*.pycliyml",
           "**/*.md"
         ],
         "exclude": [
