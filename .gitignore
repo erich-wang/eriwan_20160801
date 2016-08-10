@@ -1,4 +1,5 @@
 log/
+azurecli/
 obj/
 _site/
 .optemp/
