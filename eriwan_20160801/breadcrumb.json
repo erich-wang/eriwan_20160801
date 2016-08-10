@@ -1,0 +1,13 @@
+[{
+		"toc_title" : "Docs",
+		"href" : "/",
+		"level" : 1,
+		"children" : [{
+				"href" : "/eriwan_20160801/",
+				"homepage" : "/eriwan_20160801/index",
+				"toc_title" : "Azure CLI Docs",
+				"level" : 2
+			}
+		]
+	}
+]
