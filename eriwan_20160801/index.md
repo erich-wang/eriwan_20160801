@@ -1,1 +1,1 @@
-# Welcome to Azure Python CLI
+# Welcome to Azure Python
