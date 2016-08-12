@@ -14,7 +14,6 @@
         "Conceptual": "Content",
         "ManagedReference": "Content",
         "RestApi": "Content",
-        "AzureCli": "Content",
         "AzurePyCli": "Content"
         },
       "build_entry_point": "docs",
@@ -28,7 +27,7 @@
     {
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft",
-      "branch": "master",
+      "branch": "develop",
       "branch_mapping": {}
     }
   ],
@@ -36,7 +35,7 @@
     {
       "path_to_root": "azurecli",
       "id": "opbuild.templates.azurecli",
-      "version": "1.16.0-alpha-042-g6bfa261",
+      "version": "1.16.0-alpha-046-g167d88a",
       "nuget_feed": "https://www.myget.org/F/op-dev/api/v2"
     }
    ]
