@@ -1,0 +1,99 @@
+examples: []
+children:
+- examples: []
+  parameters:
+  - name: --batch
+    isRequired: true
+    summary: The batch to commit.
+    description: ''
+  - name: --table-name -t
+    isRequired: true
+    summary: The name of the table to commit the batch to.
+    description: ''
+  - name: --account-key
+    summary: ''
+    description: ''
+  - name: --account-name
+    summary: ''
+    description: ''
+  - name: --connection-string
+    summary: ''
+    description: ''
+  - name: --sas-token
+    summary: ''
+    description: ''
+  - name: --timeout
+    summary: Request timeout in seconds. Applies to each call to the service.
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, tsv, list, table, jsonc
+  - name: --query
+    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_storage_table_batch_commit
+  name: az storage table batch commit
+  description: ''
+  summary: ''
+  Metadata: {}
+- examples: []
+  parameters:
+  - name: --table-name -t
+    isRequired: true
+    summary: The name of the table to commit the batch to.
+    description: ''
+  - name: --account-key
+    summary: ''
+    description: ''
+  - name: --account-name
+    summary: ''
+    description: ''
+  - name: --connection-string
+    summary: ''
+    description: ''
+  - name: --sas-token
+    summary: ''
+    description: ''
+  - name: --timeout
+    summary: Request timeout in seconds. Applies to each call to the service.
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, tsv, list, table, jsonc
+  - name: --query
+    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_storage_table_batch_create
+  name: az storage table batch create
+  description: ''
+  summary: ''
+  Metadata: {}
+uid: az_storage_table_batch
+name: az storage table batch
+description: ''
+summary: ''
+Metadata: {}
