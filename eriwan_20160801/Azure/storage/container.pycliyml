@@ -6,15 +6,6 @@ children:
     isRequired: true
     summary: The container name.
     description: ''
-  - name: --account-key
-    summary: ''
-    description: ''
-  - name: --account-name
-    summary: ''
-    description: ''
-  - name: --connection-string
-    summary: ''
-    description: ''
   - name: --fail-on-exist
     summary: Throw an exception if the container already exists.
     description: ''
@@ -26,9 +17,6 @@ children:
     description: ''
     parameterValueGroup:
     - blob, container
-  - name: --sas-token
-    summary: ''
-    description: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
     description: ''
@@ -45,10 +33,22 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --account-key
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    description: ''
+  - name: --account-name
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    description: ''
+  - name: --connection-string
+    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    description: ''
+  - name: --sas-token
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
     description: ''
   uid: az_storage_container_create
   name: az storage container create
@@ -60,15 +60,6 @@ children:
   - name: --name -n
     isRequired: true
     summary: The container name.
-    description: ''
-  - name: --account-key
-    summary: ''
-    description: ''
-  - name: --account-name
-    summary: ''
-    description: ''
-  - name: --connection-string
-    summary: ''
     description: ''
   - name: --fail-not-exist
     summary: Throw an exception if the container does not exist.
@@ -82,9 +73,6 @@ children:
   - name: --lease-id
     summary: If specified, delete_container only succeeds if the container's lease is active and matches this ID. Required if the container has an active lease.
     description: ''
-  - name: --sas-token
-    summary: ''
-    description: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
     description: ''
@@ -101,10 +89,22 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --account-key
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    description: ''
+  - name: --account-name
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    description: ''
+  - name: --connection-string
+    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    description: ''
+  - name: --sas-token
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
     description: ''
   uid: az_storage_container_delete
   name: az storage container delete
@@ -116,18 +116,6 @@ children:
   - name: --name -n
     isRequired: true
     summary: The container name.
-    description: ''
-  - name: --account-key
-    summary: ''
-    description: ''
-  - name: --account-name
-    summary: ''
-    description: ''
-  - name: --connection-string
-    summary: ''
-    description: ''
-  - name: --sas-token
-    summary: ''
     description: ''
   - name: --snapshot
     summary: The snapshot parameter is an opaque DateTime value that, when present, specifies the snapshot.
@@ -148,10 +136,22 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --account-key
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    description: ''
+  - name: --account-name
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    description: ''
+  - name: --connection-string
+    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    description: ''
+  - name: --sas-token
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
     description: ''
   uid: az_storage_container_exists
   name: az storage container exists
@@ -164,17 +164,8 @@ children:
     isRequired: true
     summary: The container name.
     description: ''
-  - name: --account-key
-    summary: ''
-    description: ''
-  - name: --account-name
-    summary: ''
-    description: ''
   - name: --cache-control
     summary: Response header value for Cache-Control when resource is accessed using this shared access signature.
-    description: ''
-  - name: --connection-string
-    summary: ''
     description: ''
   - name: --content-disposition
     summary: Conveys additional information about how to process the response payload, and can also be used to attach additional metadata.
@@ -203,9 +194,6 @@ children:
   - name: --protocol
     summary: Specifies the protocol permitted for a request made. The default value is https,http. See Protocol for possible values.
     description: ''
-  - name: --sas-token
-    summary: ''
-    description: ''
   - name: --start
     summary: The time at which the shared access signature becomes valid. If omitted, start time for this call is assumed to be the time when the storage service receives the request. Azure will always convert values to UTC. If a date is passed in without timezone info, it is assumed to be UTC.
     description: ''
@@ -222,10 +210,22 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --account-key
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    description: ''
+  - name: --account-name
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    description: ''
+  - name: --connection-string
+    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    description: ''
+  - name: --sas-token
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
     description: ''
   uid: az_storage_container_generate-sas
   name: az storage container generate-sas
@@ -234,15 +234,6 @@ children:
   Metadata: {}
 - examples: []
   parameters:
-  - name: --account-key
-    summary: ''
-    description: ''
-  - name: --account-name
-    summary: ''
-    description: ''
-  - name: --connection-string
-    summary: ''
-    description: ''
   - name: --include-metadata
     summary: Specifies that container metadata be returned in the response.
     description: ''
@@ -255,9 +246,6 @@ children:
   - name: --prefix
     summary: Filters the results to return only containers whose names begin with the specified prefix.
     description: ''
-  - name: --sas-token
-    summary: ''
-    description: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
     description: ''
@@ -274,10 +262,22 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --account-key
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    description: ''
+  - name: --account-name
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    description: ''
+  - name: --connection-string
+    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    description: ''
+  - name: --sas-token
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
     description: ''
   uid: az_storage_container_list
   name: az storage container list
@@ -290,20 +290,8 @@ children:
     isRequired: true
     summary: The container name.
     description: ''
-  - name: --account-key
-    summary: ''
-    description: ''
-  - name: --account-name
-    summary: ''
-    description: ''
-  - name: --connection-string
-    summary: ''
-    description: ''
   - name: --lease-id
     summary: If specified, get_container_properties only succeeds if the container's lease is active and matches this ID.
-    description: ''
-  - name: --sas-token
-    summary: ''
     description: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
@@ -321,10 +309,22 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --account-key
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    description: ''
+  - name: --account-name
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    description: ''
+  - name: --connection-string
+    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    description: ''
+  - name: --sas-token
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
     description: ''
   uid: az_storage_container_show
   name: az storage container show
@@ -335,4 +335,6 @@ uid: az_storage_container
 name: az storage container
 description: ''
 summary: ''
-Metadata: {}
+Metadata:
+  doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
+  doc_source_url_path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py

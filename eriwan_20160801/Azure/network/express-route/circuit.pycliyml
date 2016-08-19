@@ -2,6 +2,65 @@ examples: []
 children:
 - examples: []
   parameters:
+  - name: --bandwidth-in-mbps
+    isRequired: true
+    summary: Bandwidth in Mbps of the circuit being created. It must exactly match one of the available bandwidth offers List ExpressRoute Service Providers API call.
+    description: ''
+  - name: --name -n
+    isRequired: true
+    summary: Name of the ExpressRoute circuit.
+    description: ''
+  - name: --peering-location
+    isRequired: true
+    summary: Name of the peering location. It must exactly match one of the available peering locations from List ExpressRoute Service Providers API call.
+    description: ''
+  - name: --resource-group -g
+    isRequired: true
+    summary: Name of resource group.
+    description: ''
+  - name: --service-provider-name
+    isRequired: true
+    summary: Name of the ExpressRoute Service Provider. It must exactly match one of the Service Providers from List ExpressRoute Service Providers API call.
+    description: ''
+  - name: --location -l
+    summary: Location.
+    description: ''
+  - name: --sku-family
+    summary: Chosen SKU family of ExpressRoute circuit.
+    description: ''
+    defaultValue: MeteredData
+  - name: --sku-tier
+    summary: SKU Tier of ExpressRoute circuit.
+    description: ''
+    defaultValue: Standard
+  - name: --tags
+    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, tsv, list, table, jsonc
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_network_express-route_circuit_create
+  name: az network express-route circuit create
+  description: ''
+  summary: ''
+  Metadata: {}
+- examples: []
+  parameters:
   - name: --name -n
     isRequired: true
     summary: The name of the express route Circuit.
@@ -23,7 +82,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -56,7 +115,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -84,7 +143,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -125,7 +184,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -166,7 +225,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -199,7 +258,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -241,7 +300,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -255,4 +314,6 @@ uid: az_network_express-route_circuit
 name: az network express-route circuit
 description: ''
 summary: ''
-Metadata: {}
+Metadata:
+  doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
+  doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py

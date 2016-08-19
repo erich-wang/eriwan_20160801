@@ -35,7 +35,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -123,7 +123,7 @@ children:
     summary: Globally unique DNS Name for the Public IP.
     description: ''
   - name: --size
-    summary: The VM Size that should be created.  See https://azure.microsoft.com/en-us/pricing/details/virtual-machines/ for size info.
+    summary: The VM Size that should be created.  See <a href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/">https://azure.microsoft.com/en-us/pricing/details/virtual-machines/</a> for size info.
     description: ''
     defaultValue: Standard_DS1
   - name: --ssh-dest-key-path
@@ -133,7 +133,7 @@ children:
     summary: SSH public key or public key file path.
     description: ''
   - name: --storage-account
-    summary: Name or ID of the resource.  Uses existing by default.
+    summary: Name or ID of the resource.  Uses existing resource.
     description: ''
   - name: --storage-caching
     summary: Storage caching type for the VM OS disk.
@@ -155,10 +155,10 @@ children:
     summary: The subnet name.  Creates if creating a new VNet, references if referencing an existing VNet.
     description: ''
   - name: --tags
-    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" for none.
+    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
     description: ''
   - name: --vnet
-    summary: Name or ID of the resource.  Uses existing by default.
+    summary: Name or ID of the resource.  Uses existing resource.
     description: ''
   - name: --vnet-ip-address-prefix
     summary: The virtual network IP address prefix in CIDR format.
@@ -177,14 +177,14 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   uid: az_vm_create
   name: az vm create
-  description: See https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-quick-create-cli/ for an end-to-end tutorial.
+  description: See <a href="https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-quick-create-cli/">https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-quick-create-cli/</a> for an end-to-end tutorial.
   summary: Create an Azure Virtual Machine.
   Metadata: {}
 - examples: []
@@ -214,7 +214,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -251,7 +251,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -288,7 +288,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -321,7 +321,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -349,7 +349,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -380,7 +380,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -413,7 +413,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -446,7 +446,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -483,7 +483,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -522,7 +522,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -559,7 +559,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -596,7 +596,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -633,7 +633,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -673,7 +673,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -710,7 +710,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -747,7 +747,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -777,15 +777,15 @@ children:
     isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --add
-    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.list key=<value>.'
-    description: ''
   - name: --api-version
     summary: Client Api Version.
     description: ''
     defaultValue: 2016-03-30
   - name: --expand
     summary: The expand expression to apply on the operation.
+    description: ''
+  - name: --add
+    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.list key=<value>.'
     description: ''
   - name: --remove
     summary: 'Remove a property or an element from a list.  Example: --remove property.list <index>.'
@@ -806,7 +806,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -820,4 +820,6 @@ uid: az_vm
 name: az vm
 description: ''
 summary: ''
-Metadata: {}
+Metadata:
+  doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
+  doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py

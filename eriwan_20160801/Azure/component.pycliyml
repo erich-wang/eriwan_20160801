@@ -22,7 +22,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -39,7 +39,7 @@ children:
     summary: The component name to install.
     description: ''
   - name: --link -l
-    summary: If a url or path to an html file, parse for links to archives. If local path or file://url that's a directory, then look for archives in the directory listing.
+    summary: If a url or path to an html file, parse for links to archives. If local path or <a href="file://url">file://url</a> that's a directory, then look for archives in the directory listing.
     description: ''
   - name: --private -p
     summary: Get from the project PyPI server.
@@ -60,7 +60,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -85,7 +85,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -117,7 +117,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -134,7 +134,7 @@ children:
     summary: The component name to update.
     description: ''
   - name: --link -l
-    summary: If a url or path to an html file, parse for links to archives. If local path or file://url that's a directory, then look for archives in the directory listing.
+    summary: If a url or path to an html file, parse for links to archives. If local path or <a href="file://url">file://url</a> that's a directory, then look for archives in the directory listing.
     description: ''
   - name: --private -p
     summary: Get from the project PyPI server.
@@ -152,7 +152,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -165,7 +165,7 @@ children:
 - examples: []
   parameters:
   - name: --link -l
-    summary: If a url or path to an html file, parse for links to archives. If local path or file://url that's a directory, then look for archives in the directory listing.
+    summary: If a url or path to an html file, parse for links to archives. If local path or <a href="file://url">file://url</a> that's a directory, then look for archives in the directory listing.
     description: ''
   - name: --private -p
     summary: Get from the project PyPI server.
@@ -183,7 +183,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -211,7 +211,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -225,4 +225,6 @@ uid: az_component
 name: az component
 description: ''
 summary: ''
-Metadata: {}
+Metadata:
+  doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
+  doc_source_url_path: src/command_modules/azure-cli-component/azure/cli/command_modules/component/_help.py

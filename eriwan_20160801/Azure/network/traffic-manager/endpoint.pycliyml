@@ -4,54 +4,43 @@ children:
   parameters:
   - name: --name -n
     isRequired: true
-    summary: Name of the new NIC.
+    summary: Endpoint name.
+    description: ''
+  - name: --profile-name
+    isRequired: true
+    summary: Name of parent profile.
     description: ''
   - name: --resource-group -g
     isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --subnet
+  - name: --type
     isRequired: true
-    summary: Name or ID of the resource.  Creates new by default.  Use "" for none.
+    summary: 'Endpoint type.  Values include: azureEndpoints, externalEndpoints, nestedEndpoints.'
     description: ''
-  - name: --internal-dns-name
-    summary: The internal DNS name label.
+  - name: --endpoint-location
+    summary: Specifies the location of the external or nested endpoints when using the ‘Performance’ traffic routing method.
     description: ''
-  - name: --ip-forwarding
-    summary: Enable IP forwarding.
+  - name: --endpoint-monitor-status
+    summary: Gets or sets the monitoring status of the endpoint.
     description: ''
-  - name: --lb-address-pools
-    summary: Space separated list of names or IDs of load balancer address pools to associate with the NIC. If names are used, --lb-name must be specified.
+  - name: --endpoint-status
+    summary: Gets or sets the status of the endpoint..  If the endpoint is Enabled, it is probed for endpoint health and is included in the traffic routing method.  Possible values are 'Enabled' and 'Disabled'.
     description: ''
-  - name: --lb-inbound-nat-rules
-    summary: Space separated list of names or IDs of load balancer inbound NAT rules to associate with the NIC. If names are used, --lb-name must be specified.
+  - name: --min-child-endpoints
+    summary: Gets or sets the minimum number of endpoints that must be available in the child profile in order for the parent profile to be considered available. Only applicable to endpoint of type 'NestedEndpoints'.
     description: ''
-  - name: --lb-name
-    summary: The name of the load balancer to use when adding NAT rules or address pools by name (ignored when IDs are specified).
+  - name: --priority
+    summary: Gets or sets the priority of this endpoint when using the ‘Priority’ traffic routing method. Possible values are from 1 to 1000, lower values represent higher priority. This is an optional parameter.  If specified, it must be specified on all endpoints, and no two endpoints can share the same priority value.
     description: ''
-  - name: --location -l
-    summary: Location.
+  - name: --target
+    summary: Gets or sets the fully-qualified DNS name of the endpoint. Traffic Manager returns this value in DNS responses to direct traffic to this endpoint.
     description: ''
-  - name: --network-security-group
-    summary: Name or ID of the resource.  Creates new by default.  Use "" for none.
+  - name: --target-resource-id
+    summary: Gets or sets the Azure Resource URI of the of the endpoint.  Not applicable to endpoints of type 'ExternalEndpoints'.
     description: ''
-  - name: --private-ip-address
-    summary: Static private IP address to use.
-    description: ''
-  - name: --private-ip-address-version
-    summary: The private IP address version to use.
-    description: ''
-    defaultValue: ipv4
-    parameterValueGroup:
-    - ipv4, ipv6
-  - name: --public-ip-address
-    summary: Name or ID of the resource.  Creates new by default.  Use "" for none.
-    description: ''
-  - name: --tags
-    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
-    description: ''
-  - name: --vnet-name
-    summary: The virtual network (VNet) associated with the provided subnet name (Omit if supplying a subnet id).
+  - name: --weight
+    summary: Gets or sets the weight of this endpoint when using the 'Weighted' traffic routing method. Possible values are from 1 to 1000.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -71,8 +60,8 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_network_nic_create
-  name: az network nic create
+  uid: az_network_traffic-manager_endpoint_create
+  name: az network traffic-manager endpoint create
   description: ''
   summary: ''
   Metadata: {}
@@ -80,11 +69,19 @@ children:
   parameters:
   - name: --name -n
     isRequired: true
-    summary: The name of the network interface.
+    summary: Endpoint name.
+    description: ''
+  - name: --profile-name
+    isRequired: true
+    summary: Name of parent profile.
     description: ''
   - name: --resource-group -g
     isRequired: true
     summary: Name of resource group.
+    description: ''
+  - name: --type
+    isRequired: true
+    summary: 'Endpoint type.  Values include: azureEndpoints, externalEndpoints, nestedEndpoints.'
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -104,15 +101,23 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_network_nic_delete
-  name: az network nic delete
+  uid: az_network_traffic-manager_endpoint_delete
+  name: az network traffic-manager endpoint delete
   description: ''
   summary: ''
   Metadata: {}
 - examples: []
   parameters:
+  - name: --profile-name
+    isRequired: true
+    summary: Name of parent profile.
+    description: ''
   - name: --resource-group -g
+    isRequired: true
     summary: Name of resource group.
+    description: ''
+  - name: --type
+    summary: 'Endpoint type.  Values include: azureEndpoints, externalEndpoints, nestedEndpoints.'
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -132,44 +137,8 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_network_nic_list
-  name: az network nic list
-  description: ''
-  summary: ''
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the network interface.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --expand
-    summary: Expand references resources.
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  uid: az_network_nic_show
-  name: az network nic show
+  uid: az_network_traffic-manager_endpoint_list
+  name: az network traffic-manager endpoint list
   description: ''
   summary: ''
   Metadata: {}
@@ -177,22 +146,19 @@ children:
   parameters:
   - name: --name -n
     isRequired: true
-    summary: Name of the new NIC.
+    summary: Endpoint name.
+    description: ''
+  - name: --profile-name
+    isRequired: true
+    summary: Name of parent profile.
     description: ''
   - name: --resource-group -g
     isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --internal-dns-name
-    summary: The internal DNS name label.
-    description: ''
-  - name: --ip-forwarding
-    summary: Enable IP forwarding.
-    description: ''
-    parameterValueGroup:
-    - true, false
-  - name: --network-security-group
-    summary: Name or ID of an existing network security group to associate with the NIC.
+  - name: --type
+    isRequired: true
+    summary: 'Endpoint type.  Values include: azureEndpoints, externalEndpoints, nestedEndpoints.'
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -212,13 +178,63 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_network_nic_update
-  name: az network nic update
+  uid: az_network_traffic-manager_endpoint_show
+  name: az network traffic-manager endpoint show
   description: ''
   summary: ''
   Metadata: {}
-uid: az_network_nic
-name: az network nic
+- examples: []
+  parameters:
+  - name: --name -n
+    isRequired: true
+    summary: Endpoint name.
+    description: ''
+  - name: --profile-name
+    isRequired: true
+    summary: Name of parent profile.
+    description: ''
+  - name: --resource-group -g
+    isRequired: true
+    summary: Name of resource group.
+    description: ''
+  - name: --type
+    isRequired: true
+    summary: 'Endpoint type.  Values include: azureEndpoints, externalEndpoints, nestedEndpoints.'
+    description: ''
+  - name: --add
+    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.list key=<value>.'
+    description: ''
+  - name: --remove
+    summary: 'Remove a property or an element from a list.  Example: --remove property.list <index>.'
+    description: ''
+  - name: --set
+    summary: 'Update an object by specifying a property path and value to set.  Example: --set property1.property2=value.'
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, tsv, list, table, jsonc
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_network_traffic-manager_endpoint_update
+  name: az network traffic-manager endpoint update
+  description: ''
+  summary: ''
+  Metadata: {}
+uid: az_network_traffic-manager_endpoint
+name: az network traffic-manager endpoint
 description: ''
 summary: ''
 Metadata:

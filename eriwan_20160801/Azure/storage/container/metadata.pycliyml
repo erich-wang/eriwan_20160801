@@ -6,20 +6,8 @@ children:
     isRequired: true
     summary: The container name.
     description: ''
-  - name: --account-key
-    summary: ''
-    description: ''
-  - name: --account-name
-    summary: ''
-    description: ''
-  - name: --connection-string
-    summary: ''
-    description: ''
   - name: --lease-id
     summary: If specified, get_container_metadata only succeeds if the container's lease is active and matches this ID.
-    description: ''
-  - name: --sas-token
-    summary: ''
     description: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
@@ -37,10 +25,22 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --account-key
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    description: ''
+  - name: --account-name
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    description: ''
+  - name: --connection-string
+    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    description: ''
+  - name: --sas-token
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
     description: ''
   uid: az_storage_container_metadata_show
   name: az storage container metadata show
@@ -53,15 +53,6 @@ children:
     isRequired: true
     summary: The container name.
     description: ''
-  - name: --account-key
-    summary: ''
-    description: ''
-  - name: --account-name
-    summary: ''
-    description: ''
-  - name: --connection-string
-    summary: ''
-    description: ''
   - name: --if-modified-since
     summary: Alter only if modified since supplied UTC datetime (Y-m-d'T'H:M'Z').
     description: ''
@@ -70,9 +61,6 @@ children:
     description: ''
   - name: --metadata
     summary: Metadata in space-separated key=value pairs.
-    description: ''
-  - name: --sas-token
-    summary: ''
     description: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
@@ -90,10 +78,22 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --account-key
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    description: ''
+  - name: --account-name
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    description: ''
+  - name: --connection-string
+    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    description: ''
+  - name: --sas-token
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
     description: ''
   uid: az_storage_container_metadata_update
   name: az storage container metadata update
@@ -104,4 +104,6 @@ uid: az_storage_container_metadata
 name: az storage container metadata
 description: ''
 summary: ''
-Metadata: {}
+Metadata:
+  doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
+  doc_source_url_path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py

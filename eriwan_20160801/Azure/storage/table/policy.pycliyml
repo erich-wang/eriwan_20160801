@@ -10,23 +10,11 @@ children:
     isRequired: true
     summary: The container name.
     description: ''
-  - name: --account-key
-    summary: ''
-    description: ''
-  - name: --account-name
-    summary: ''
-    description: ''
-  - name: --connection-string
-    summary: ''
-    description: ''
   - name: --expiry
     summary: Expiration UTC datetime in (Y-m-d'T'H:M'Z').
     description: ''
   - name: --permissions
     summary: 'Permissions granted: (r)ead (a)dd (u)pdate (d)elete. Can be combined.'
-    description: ''
-  - name: --sas-token
-    summary: ''
     description: ''
   - name: --start
     summary: Start UTC datetime (Y-m-d'T'H:M'Z'). Defaults to time of request.
@@ -44,10 +32,22 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --account-key
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    description: ''
+  - name: --account-name
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    description: ''
+  - name: --connection-string
+    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    description: ''
+  - name: --sas-token
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
     description: ''
   uid: az_storage_table_policy_create
   name: az storage table policy create
@@ -64,18 +64,6 @@ children:
     isRequired: true
     summary: The container name.
     description: ''
-  - name: --account-key
-    summary: ''
-    description: ''
-  - name: --account-name
-    summary: ''
-    description: ''
-  - name: --connection-string
-    summary: ''
-    description: ''
-  - name: --sas-token
-    summary: ''
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -89,10 +77,22 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --account-key
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    description: ''
+  - name: --account-name
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    description: ''
+  - name: --connection-string
+    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    description: ''
+  - name: --sas-token
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
     description: ''
   uid: az_storage_table_policy_delete
   name: az storage table policy delete
@@ -105,18 +105,6 @@ children:
     isRequired: true
     summary: The container name.
     description: ''
-  - name: --account-key
-    summary: ''
-    description: ''
-  - name: --account-name
-    summary: ''
-    description: ''
-  - name: --connection-string
-    summary: ''
-    description: ''
-  - name: --sas-token
-    summary: ''
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -130,10 +118,22 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --account-key
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    description: ''
+  - name: --account-name
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    description: ''
+  - name: --connection-string
+    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    description: ''
+  - name: --sas-token
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
     description: ''
   uid: az_storage_table_policy_list
   name: az storage table policy list
@@ -150,18 +150,6 @@ children:
     isRequired: true
     summary: The container name.
     description: ''
-  - name: --account-key
-    summary: ''
-    description: ''
-  - name: --account-name
-    summary: ''
-    description: ''
-  - name: --connection-string
-    summary: ''
-    description: ''
-  - name: --sas-token
-    summary: ''
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -175,10 +163,22 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --account-key
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    description: ''
+  - name: --account-name
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    description: ''
+  - name: --connection-string
+    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    description: ''
+  - name: --sas-token
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
     description: ''
   uid: az_storage_table_policy_show
   name: az storage table policy show
@@ -195,23 +195,11 @@ children:
     isRequired: true
     summary: The container name.
     description: ''
-  - name: --account-key
-    summary: ''
-    description: ''
-  - name: --account-name
-    summary: ''
-    description: ''
-  - name: --connection-string
-    summary: ''
-    description: ''
   - name: --expiry
     summary: Expiration UTC datetime in (Y-m-d'T'H:M'Z').
     description: ''
   - name: --permissions
     summary: 'Permissions granted: (r)ead (a)dd (u)pdate (d)elete. Can be combined.'
-    description: ''
-  - name: --sas-token
-    summary: ''
     description: ''
   - name: --start
     summary: Start UTC datetime (Y-m-d'T'H:M'Z'). Defaults to time of request.
@@ -229,10 +217,22 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --account-key
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    description: ''
+  - name: --account-name
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    description: ''
+  - name: --connection-string
+    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    description: ''
+  - name: --sas-token
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
     description: ''
   uid: az_storage_table_policy_update
   name: az storage table policy update
@@ -243,4 +243,6 @@ uid: az_storage_table_policy
 name: az storage table policy
 description: ''
 summary: ''
-Metadata: {}
+Metadata:
+  doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
+  doc_source_url_path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py

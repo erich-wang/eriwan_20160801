@@ -8,7 +8,7 @@ children:
     description: ''
   - name: --public-ip-address
     isRequired: true
-    summary: Name or ID of the resource.  Uses existing by default.
+    summary: Name or ID of the resource.  Uses existing resource.
     description: ''
   - name: --resource-group -g
     isRequired: true
@@ -37,7 +37,7 @@ children:
     parameterValueGroup:
     - Basic, Standard, HighPerformance
   - name: --tags
-    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" for none.
+    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
     description: ''
   - name: --vpn-type
     summary: ''
@@ -58,7 +58,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -91,7 +91,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -120,7 +120,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -157,7 +157,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -190,7 +190,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -209,6 +209,9 @@ children:
   - name: --resource-group -g
     isRequired: true
     summary: Name of resource group.
+    description: ''
+  - name: --address-prefixes
+    summary: List of address prefixes for the VPN gateway.  Prerequisite for uploading certificates.
     description: ''
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.list key=<value>.'
@@ -232,7 +235,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -246,4 +249,6 @@ uid: az_network_vpn-gateway
 name: az network vpn-gateway
 description: ''
 summary: ''
-Metadata: {}
+Metadata:
+  doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
+  doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py

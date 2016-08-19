@@ -22,11 +22,11 @@ children:
     description: ''
     defaultValue: 1
   - name: --sku-name
-    summary: Describes plan's pricing tier and instance size. Check details at https://azure.microsoft.com/en-us/pricing/details/app-service/.
+    summary: Describes plan's pricing tier and instance size. Check details at <a href="https://azure.microsoft.com/en-us/pricing/details/app-service/">https://azure.microsoft.com/en-us/pricing/details/app-service/</a>.
     description: ''
     defaultValue: F1
   - name: --tags
-    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" for none.
+    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -41,7 +41,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -79,7 +79,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -93,4 +93,6 @@ uid: az_webapp
 name: az webapp
 description: ''
 summary: ''
-Metadata: {}
+Metadata:
+  doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
+  doc_source_url_path: src/command_modules/azure-cli-webapp/azure/cli/command_modules/webapp/_help.py

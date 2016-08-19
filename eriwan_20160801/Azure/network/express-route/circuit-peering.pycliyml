@@ -2,6 +2,85 @@ examples: []
 children:
 - examples: []
   parameters:
+  - name: --bandwidth-in-mbps
+    isRequired: true
+    summary: Bandwidth in Mbps of the circuit being created. It must exactly match one of the available bandwidth offers List ExpressRoute Service Providers API call.
+    description: ''
+  - name: --circuit-name
+    isRequired: true
+    summary: Name of the ExpressRoute circuit.
+    description: ''
+  - name: --peer-asn
+    isRequired: true
+    summary: The autonomous system number of the customer/connectivity provider.
+    description: ''
+  - name: --peering-location
+    isRequired: true
+    summary: Name of the peering location and not the ARM resource location. It must exactly match one of the available peering locations from List ExpressRoute Service Providers API call.
+    description: ''
+  - name: --primary-peer-address-prefix
+    isRequired: true
+    summary: /30 subnet used to configure IP addresses for interfaces on Link1.
+    description: ''
+  - name: --resource-group -g
+    isRequired: true
+    summary: Name of resource group.
+    description: ''
+  - name: --secondary-peer-address-prefix
+    isRequired: true
+    summary: /30 subnet used to configure IP addresses for interfaces on Link2.
+    description: ''
+  - name: --service-provider-name
+    isRequired: true
+    summary: Name of the ExpressRoute Service Provider. It must exactly match one of the Service Providers from List ExpressRoute Service Providers API call.
+    description: ''
+  - name: --vlan-id
+    isRequired: true
+    summary: Specifies the identifier that is used to identify the customer.
+    description: ''
+  - name: --location -l
+    summary: Location.
+    description: ''
+  - name: --peering-type
+    summary: BGP peering type for the Circuit.
+    description: ''
+    defaultValue: AzurePrivatePeering
+  - name: --sku-family
+    summary: Chosen SKU family of ExpressRoute circuit.
+    description: ''
+    defaultValue: MeteredData
+  - name: --sku-tier
+    summary: Chosen SKU Tier of ExpressRoute circuit.
+    description: ''
+    defaultValue: Standard
+  - name: --tags
+    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, tsv, list, table, jsonc
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_network_express-route_circuit-peering_create
+  name: az network express-route circuit-peering create
+  description: ''
+  summary: ''
+  Metadata: {}
+- examples: []
+  parameters:
   - name: --circuit-name
     isRequired: true
     summary: The name of the express route circuit.
@@ -27,7 +106,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -60,7 +139,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -97,7 +176,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -147,7 +226,7 @@ children:
     parameterValueGroup:
     - json, tsv, list, table, jsonc
   - name: --query
-    summary: JMESPath query string. See http://jmespath.org/ for more information and examples.
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
@@ -161,4 +240,6 @@ uid: az_network_express-route_circuit-peering
 name: az network express-route circuit-peering
 description: ''
 summary: ''
-Metadata: {}
+Metadata:
+  doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
+  doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py

@@ -4,55 +4,75 @@ children:
   parameters:
   - name: --name -n
     isRequired: true
-    summary: Name of the new NIC.
+    summary: DNS prefix to verify availability for.
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, tsv, list, table, jsonc
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_network_traffic-manager_profile_check-dns
+  name: az network traffic-manager profile check-dns
+  description: ''
+  summary: ''
+  Metadata: {}
+- examples: []
+  parameters:
+  - name: --name -n
+    isRequired: true
+    summary: Name of resource.
     description: ''
   - name: --resource-group -g
     isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --subnet
+  - name: --routing-method
     isRequired: true
-    summary: Name or ID of the resource.  Creates new by default.  Use "" for none.
+    summary: ''
     description: ''
-  - name: --internal-dns-name
-    summary: The internal DNS name label.
-    description: ''
-  - name: --ip-forwarding
-    summary: Enable IP forwarding.
-    description: ''
-  - name: --lb-address-pools
-    summary: Space separated list of names or IDs of load balancer address pools to associate with the NIC. If names are used, --lb-name must be specified.
-    description: ''
-  - name: --lb-inbound-nat-rules
-    summary: Space separated list of names or IDs of load balancer inbound NAT rules to associate with the NIC. If names are used, --lb-name must be specified.
-    description: ''
-  - name: --lb-name
-    summary: The name of the load balancer to use when adding NAT rules or address pools by name (ignored when IDs are specified).
+    parameterValueGroup:
+    - priority, performance, weighted
+  - name: --unique-dns-name
+    isRequired: true
+    summary: Relative DNS name for the traffic manager profile, resulting FQDN will be <uniqueDnsName>.trafficmanager.net, must be globally unique.
     description: ''
   - name: --location -l
     summary: Location.
     description: ''
-  - name: --network-security-group
-    summary: Name or ID of the resource.  Creates new by default.  Use "" for none.
+    defaultValue: global
+  - name: --monitor-path
+    summary: Path to monitor.
     description: ''
-  - name: --private-ip-address
-    summary: Static private IP address to use.
+    defaultValue: /
+  - name: --monitor-port
+    summary: Port to monitor.
     description: ''
-  - name: --private-ip-address-version
-    summary: The private IP address version to use.
+    defaultValue: 80
+  - name: --monitor-protocol
+    summary: ''
     description: ''
-    defaultValue: ipv4
-    parameterValueGroup:
-    - ipv4, ipv6
-  - name: --public-ip-address
-    summary: Name or ID of the resource.  Creates new by default.  Use "" for none.
+    defaultValue: http
+  - name: --status
+    summary: Create an enabled or disabled profile.
     description: ''
-  - name: --tags
-    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
+    defaultValue: enabled
+  - name: --ttl
+    summary: DNS Config time-to-live in seconds.
     description: ''
-  - name: --vnet-name
-    summary: The virtual network (VNet) associated with the provided subnet name (Omit if supplying a subnet id).
-    description: ''
+    defaultValue: 30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -71,8 +91,8 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_network_nic_create
-  name: az network nic create
+  uid: az_network_traffic-manager_profile_create
+  name: az network traffic-manager profile create
   description: ''
   summary: ''
   Metadata: {}
@@ -80,7 +100,7 @@ children:
   parameters:
   - name: --name -n
     isRequired: true
-    summary: The name of the network interface.
+    summary: The name of the Traffic Manager profile to be deleted.
     description: ''
   - name: --resource-group -g
     isRequired: true
@@ -104,8 +124,8 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_network_nic_delete
-  name: az network nic delete
+  uid: az_network_traffic-manager_profile_delete
+  name: az network traffic-manager profile delete
   description: ''
   summary: ''
   Metadata: {}
@@ -132,44 +152,8 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_network_nic_list
-  name: az network nic list
-  description: ''
-  summary: ''
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the network interface.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --expand
-    summary: Expand references resources.
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  uid: az_network_nic_show
-  name: az network nic show
+  uid: az_network_traffic-manager_profile_list
+  name: az network traffic-manager profile list
   description: ''
   summary: ''
   Metadata: {}
@@ -177,22 +161,11 @@ children:
   parameters:
   - name: --name -n
     isRequired: true
-    summary: Name of the new NIC.
+    summary: The name of the Traffic Manager profile.
     description: ''
   - name: --resource-group -g
     isRequired: true
     summary: Name of resource group.
-    description: ''
-  - name: --internal-dns-name
-    summary: The internal DNS name label.
-    description: ''
-  - name: --ip-forwarding
-    summary: Enable IP forwarding.
-    description: ''
-    parameterValueGroup:
-    - true, false
-  - name: --network-security-group
-    summary: Name or ID of an existing network security group to associate with the NIC.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -212,13 +185,55 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_network_nic_update
-  name: az network nic update
+  uid: az_network_traffic-manager_profile_show
+  name: az network traffic-manager profile show
   description: ''
   summary: ''
   Metadata: {}
-uid: az_network_nic
-name: az network nic
+- examples: []
+  parameters:
+  - name: --name -n
+    isRequired: true
+    summary: The name of the Traffic Manager profile.
+    description: ''
+  - name: --resource-group -g
+    isRequired: true
+    summary: Name of resource group.
+    description: ''
+  - name: --add
+    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.list key=<value>.'
+    description: ''
+  - name: --remove
+    summary: 'Remove a property or an element from a list.  Example: --remove property.list <index>.'
+    description: ''
+  - name: --set
+    summary: 'Update an object by specifying a property path and value to set.  Example: --set property1.property2=value.'
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, tsv, list, table, jsonc
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_network_traffic-manager_profile_update
+  name: az network traffic-manager profile update
+  description: ''
+  summary: ''
+  Metadata: {}
+uid: az_network_traffic-manager_profile
+name: az network traffic-manager profile
 description: ''
 summary: ''
 Metadata:
