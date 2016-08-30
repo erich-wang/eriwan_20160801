@@ -1,1 +1,1 @@
-# [Azure](Azure/)
+# [Azure](Azure/toc.md)
