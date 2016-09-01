@@ -3,19 +3,8 @@
     "content": [
       {
         "files": [
-          "**/*.pycliyml"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "eriwan_20160801/**",
-          "**/includes/**"
-        ],
-        "src": "Azure",
-        "dest": "."
-      },
-      {
-        "files": [
-          "*.md"
+          "**/*.pycliyml",
+          "**/*.md"
         ],
         "exclude": [
           "**/obj/**",

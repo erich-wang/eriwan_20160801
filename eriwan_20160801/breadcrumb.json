@@ -6,14 +6,7 @@
 				"href" : "/eriwan_20160801/",
 				"homepage" : "/eriwan_20160801/index",
 				"toc_title" : "Azure CLI Docs",
-				"level" : 2,
-				"children" : [{
-						"href" : "/eriwan_20160801/azure/",
-						"homepage" : "/eriwan_20160801/azure/",
-						"toc_title" : "Reference",
-						"level" : 3
-					}
-				]
+				"level" : 2
 			}
 		]
 	}
