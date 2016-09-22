@@ -2,14 +2,6 @@ examples: []
 children:
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the virtual machine.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
   - name: --vhd-name-prefix
     isRequired: true
     summary: The VHD name prefix specify for the VM disks.
@@ -40,19 +32,41 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual machine.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   uid: az_vm_capture
   name: az vm capture
   description: ''
-  summary: ''
+  summary: >-
+    Captures the VM by copying virtual hard disks of the VM and outputs a
+
+    template that can be used to create similar VMs.
   Metadata: {}
 - examples:
   - title: Create a simple Windows Server VM with private IP address only
-    code: "az vm create -n my_vm_name -g myrg --admin-username myadmin --admin-password Password@1234 \n --public-ip-address-type none"
+    code: "az vm create -n my_vm_name -g myrg --admin-username myadmin --admin-password Password@1234 \n --public-ip-address \"\""
   - title: Create a simple Windows Server VM with public IP address and DNS entry
     code: az vm create -n my_vm_name -g myrg --admin-username myadmin --admin-password Password@1234 --public-ip-address-dns-name my_globally_unique_vm_dns_name
   - title: Create a Linux VM with SSH key authentication, add a public DNS entry and add to an existing Virtual Network and Availability Set.
     code: az vm create -n my_vm_name -g myrg --image <linux image from 'az vm image list'> --authentication-type ssh --vnet my_existing_vnet --subnet-name subnet1 --availability-set my_existing_availability_set --public-ip-address-dns-name my_globally_unique_vm_dns_name --ssh-key-value "<ssh-rsa-key, key-file-path or not specified for default-key-path>"
   parameters:
+  - name: --image
+    isRequired: true
+    summary: OS image (URN alias, URN or URI).
+    description: >-
+      URN aliases: CentOS, CoreOS, Debian, openSUSE, RHEL, SLES, UbuntuLTS, Win2008SP1, Win2012Datacenter, Win2012R2Datacenter.
+
+      Example URN: MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:latest.
+
+      Example URI: http://<storageAccount>.blob.core.windows.net/vhds/osdiskimage.vhd.
+    valueFrom: az vm image list, az vm image show
   - name: --name -n
     isRequired: true
     summary: The VM name.
@@ -67,7 +81,7 @@ children:
   - name: --admin-username
     summary: Username for the Virtual Machine.
     description: ''
-    defaultValue: eriwan
+    defaultValue: appveyor
   - name: --authentication-type
     summary: Password or SSH public key authentication. Defaults to password for Windows and SSH public key for Linux.
     description: ''
@@ -80,16 +94,6 @@ children:
     summary: Custom image OS type.
     description: ''
     defaultValue: windows
-  - name: --image
-    summary: OS image (URN alias, URN or URI).
-    description: >-
-      URN aliases: CentOS, CoreOS, Debian, openSUSE, RHEL, SLES, UbuntuLTS, Win2008SP1, Win2012Datacenter, Win2012R2Datacenter.
-
-      Example URN: MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:latest.
-
-      Example URI: http://<storageAccount>.blob.core.windows.net/vhds/osdiskimage.vhd.
-    defaultValue: Win2012R2Datacenter
-    valueFrom: az vm image list, az vm image show
   - name: --location -l
     summary: Location.
     description: ''
@@ -189,18 +193,6 @@ children:
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the virtual machine.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -218,26 +210,28 @@ children:
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual machine.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   uid: az_vm_deallocate
   name: az vm deallocate
-  description: ''
-  summary: ''
+  description: >-
+    You
+
+    are not billed for the compute resources that this Virtual Machine
+
+    uses.
+  summary: Shuts down the Virtual Machine and releases the compute resources.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the virtual machine.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -255,26 +249,23 @@ children:
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual machine.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   uid: az_vm_delete
   name: az vm delete
   description: ''
-  summary: ''
+  summary: The operation to delete a virtual machine.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the virtual machine.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -292,22 +283,23 @@ children:
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual machine.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   uid: az_vm_generalize
   name: az vm generalize
   description: ''
-  summary: ''
+  summary: Sets the state of the VM as Generalized.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the virtual machine.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -326,10 +318,19 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual machine.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   uid: az_vm_get-instance-view
   name: az vm get-instance-view
   description: ''
-  summary: ''
+  summary: Gets a VM including instance information (powerState).
   Metadata: {}
 - examples: []
   parameters:
@@ -357,16 +358,10 @@ children:
   uid: az_vm_list
   name: az vm list
   description: ''
-  summary: ''
+  summary: List Virtual Machines.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    summary: The name of the virtual machine.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -385,10 +380,19 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual machine.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   uid: az_vm_list-ip-addresses
   name: az vm list-ip-addresses
   description: ''
-  summary: ''
+  summary: Get IP addresses from one or more Virtual Machines.
   Metadata: {}
 - examples: []
   parameters:
@@ -396,10 +400,6 @@ children:
     isRequired: true
     summary: Location.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -421,7 +421,10 @@ children:
   uid: az_vm_list-sizes
   name: az vm list-sizes
   description: ''
-  summary: ''
+  summary: >-
+    Lists all available virtual machine sizes for a subscription in a
+
+    location.
   Metadata: {}
 - examples: []
   parameters:
@@ -429,10 +432,6 @@ children:
     isRequired: true
     summary: Location.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -454,22 +453,10 @@ children:
   uid: az_vm_list-usage
   name: az vm list-usage
   description: ''
-  summary: ''
+  summary: Lists compute usages for a subscription.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the virtual machine.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -488,21 +475,25 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual machine.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   uid: az_vm_list-vm-resize-options
   name: az vm list-vm-resize-options
   description: ''
-  summary: ''
+  summary: >-
+    Lists all available virtual machine sizes it can be resized to for a
+
+    virtual machine.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the virtual machine to open inbound traffic on.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
   - name: --apply-to-subnet
     summary: Allow inbound traffic on the subnet instead of the NIC.
     description: ''
@@ -527,25 +518,32 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual machine to open inbound traffic on.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   uid: az_vm_open-port
   name: az vm open-port
-  description: ''
-  summary: ''
+  description: >-
+    The
+
+    existing NSG will be used or a new one will be created. The rule name is 'open-port-cmd' and
+
+    will overwrite an existing rule with this name. For multi-NIC VMs, or for more fine
+
+    grained control, use the appropriate network commands directly (nsg rule create, etc).
+  summary: >-
+    Opens a VM to all inbound traffic and protocols by adding a security rule to the network
+
+    security group (NSG) that is attached to the VM's network interface (NIC) or subnet.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the virtual machine.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -564,21 +562,22 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_vm_redeploy
-  name: az vm redeploy
-  description: ''
-  summary: ''
-  Metadata: {}
-- examples: []
-  parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
   - name: --name -n
-    isRequired: true
     summary: The name of the virtual machine.
     description: ''
   - name: --resource-group -g
-    isRequired: true
     summary: Name of resource group.
     description: ''
+  uid: az_vm_redeploy
+  name: az vm redeploy
+  description: ''
+  summary: The operation to redeploy a virtual machine.
+  Metadata: {}
+- examples: []
+  parameters:
   - name: --size
     isRequired: true
     summary: Sizes such as Standard_A4, Standard_F4s, etc.
@@ -601,25 +600,22 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_vm_resize
-  name: az vm resize
-  description: ''
-  summary: ''
-  Metadata: {}
-- examples: []
-  parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
   - name: --name -n
-    isRequired: true
     summary: The name of the virtual machine.
     description: ''
   - name: --resource-group -g
-    isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
+  uid: az_vm_resize
+  name: az vm resize
+  description: ''
+  summary: Update vm size.
+  Metadata: {}
+- examples: []
+  parameters:
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -638,25 +634,22 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_vm_restart
-  name: az vm restart
-  description: ''
-  summary: ''
-  Metadata: {}
-- examples: []
-  parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
   - name: --name -n
-    isRequired: true
     summary: The name of the virtual machine.
     description: ''
   - name: --resource-group -g
-    isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
+  uid: az_vm_restart
+  name: az vm restart
+  description: ''
+  summary: The operation to restart a virtual machine.
+  Metadata: {}
+- examples: []
+  parameters:
   - name: --expand
     summary: The expand expression to apply on the operation.
     description: ''
@@ -678,25 +671,22 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_vm_show
-  name: az vm show
-  description: ''
-  summary: ''
-  Metadata: {}
-- examples: []
-  parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
   - name: --name -n
-    isRequired: true
     summary: The name of the virtual machine.
     description: ''
   - name: --resource-group -g
-    isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
+  uid: az_vm_show
+  name: az vm show
+  description: ''
+  summary: The operation to get a virtual machine.
+  Metadata: {}
+- examples: []
+  parameters:
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -714,26 +704,23 @@ children:
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual machine.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   uid: az_vm_start
   name: az vm start
   description: ''
-  summary: ''
+  summary: The operation to start a virtual machine.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the virtual machine.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -752,10 +739,19 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual machine.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   uid: az_vm_stop
   name: az vm stop
   description: ''
-  summary: ''
+  summary: The operation to power off (stop) a virtual machine.
   Metadata: {}
 - examples:
   - title: Add or update a tag
@@ -769,29 +765,14 @@ children:
   - title: Remove fourth NIC
     code: az <command> -n name -g group --remove networkProfile.networkInterfaces 3
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the virtual machine.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
-  - name: --expand
-    summary: The expand expression to apply on the operation.
-    description: ''
   - name: --add
-    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.list key=<value>.'
+    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
     description: ''
   - name: --remove
-    summary: 'Remove a property or an element from a list.  Example: --remove property.list <index>.'
+    summary: 'Remove a property or an element from a list.  Example: --remove property.list <indexToRemove> OR --remove propertyToRemove.'
     description: ''
   - name: --set
-    summary: 'Update an object by specifying a property path and value to set.  Example: --set property1.property2=value.'
+    summary: 'Update an object by specifying a property path and value to set.  Example: --set property1.property2=<value>.'
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -811,6 +792,15 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual machine.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   uid: az_vm_update
   name: az vm update
   description: Update VM objects and properties using paths that correspond to 'az vm show'.  See examples.
@@ -819,7 +809,9 @@ children:
 uid: az_vm
 name: az vm
 description: ''
-summary: ''
+summary: Provision Linux and Windows virtual machines in minutes.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

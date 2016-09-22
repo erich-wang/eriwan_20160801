@@ -29,10 +29,22 @@ children:
   description: ''
   summary: ''
   Metadata: {}
-- examples: []
+- examples:
+  - title: Create with defaults
+    code: az ad sp create-for-rbac
+  - title: Create with a custom name
+    code: az ad sp create-for-rbac -n "http://my-app"
+  - title: Create role assignments at the same time
+    code: az ad sp create-for-rbac -n "http://my-app" --role contributor --resource-ids /subscriptions/11111111-2222-3333-4444-555555555555/resourceGroups/mygroup /subscriptions/11111111-2222-3333-4444-555555555555/resourceGroups/my-another-group
   parameters:
   - name: --name -n
     summary: An unique uri. If missing, the command will generate one.
+    description: ''
+  - name: --resource-ids
+    summary: Ids of resources the service principal has access to.
+    description: ''
+  - name: --role
+    summary: Role the service principal has on the resources. only use with 'resource-ids'.
     description: ''
   - name: --secret
     summary: The secret used to login. If missing, command will generate one.
@@ -62,7 +74,7 @@ children:
   uid: az_ad_sp_create-for-rbac
   name: az ad sp create-for-rbac
   description: ''
-  summary: ''
+  summary: Create a service principal that can access or modify resources.
   Metadata: {}
 - examples: []
   parameters:
@@ -161,7 +173,7 @@ children:
   uid: az_ad_sp_reset-credentials
   name: az ad sp reset-credentials
   description: ''
-  summary: ''
+  summary: Reset credential, on expiration or you forget it.
   Metadata: {}
 - examples: []
   parameters:
@@ -195,7 +207,9 @@ children:
 uid: az_ad_sp
 name: az ad sp
 description: ''
-summary: ''
+summary: Manages AAD service principals for automation authentication.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-role/azure/cli/command_modules/role/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-role/azure/cli/command_modules/role/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

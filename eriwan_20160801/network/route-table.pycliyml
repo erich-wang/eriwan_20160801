@@ -37,18 +37,10 @@ children:
   uid: az_network_route-table_create
   name: az network route-table create
   description: ''
-  summary: ''
+  summary: Create or update a virtual machine.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the route table.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -67,10 +59,19 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the route table.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   uid: az_network_route-table_delete
   name: az network route-table delete
   description: ''
-  summary: ''
+  summary: The Delete RouteTable operation deletes the specified Route Table.
   Metadata: {}
 - examples: []
   parameters:
@@ -102,14 +103,6 @@ children:
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the route table.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
   - name: --expand
     summary: Expand references resources.
     description: ''
@@ -130,33 +123,34 @@ children:
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the route table.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   uid: az_network_route-table_show
   name: az network route-table show
   description: ''
-  summary: ''
+  summary: >-
+    The Get RouteTables operation retrieves information about the
+
+    specified route table.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the route table.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --expand
-    summary: Expand references resources.
-    description: ''
   - name: --add
-    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.list key=<value>.'
+    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
     description: ''
   - name: --remove
-    summary: 'Remove a property or an element from a list.  Example: --remove property.list <index>.'
+    summary: 'Remove a property or an element from a list.  Example: --remove property.list <indexToRemove> OR --remove propertyToRemove.'
     description: ''
   - name: --set
-    summary: 'Update an object by specifying a property path and value to set.  Example: --set property1.property2=value.'
+    summary: 'Update an object by specifying a property path and value to set.  Example: --set property1.property2=<value>.'
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -175,6 +169,15 @@ children:
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the route table.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   uid: az_network_route-table_update
   name: az network route-table update
@@ -184,7 +187,9 @@ children:
 uid: az_network_route-table
 name: az network route-table
 description: ''
-summary: ''
+summary: Manage route tables.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

@@ -17,7 +17,7 @@ children:
   - name: --admin-username
     summary: User name for the Linux Virtual Machines.
     description: ''
-    defaultValue: eriwan
+    defaultValue: appveyor
   - name: --agent-count
     summary: The number of agents for the cluster.  Note, for DC/OS clusters you will also get 1 or 2 public agents in addition to these seleted masters.
     description: ''
@@ -42,7 +42,7 @@ children:
   - name: --ssh-key-value
     summary: SSH key file value or key file path.
     description: ''
-    defaultValue: C:Userseriwan.sshid_rsa.pub
+    defaultValue: C:Usersappveyor.sshid_rsa.pub
   - name: --tags
     summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
     description: ''
@@ -67,7 +67,7 @@ children:
   uid: az_vm_container_create
   name: az vm container create
   description: See <a href="https://azure.microsoft.com/en-us/documentation/articles/container-service-intro/">https://azure.microsoft.com/en-us/documentation/articles/container-service-intro/</a> for an intro to Container Service.
-  summary: ''
+  summary: Create or update a virtual machine.
   Metadata: {}
 - examples: []
   parameters:
@@ -79,10 +79,6 @@ children:
     isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -104,7 +100,7 @@ children:
   uid: az_vm_container_delete
   name: az vm container delete
   description: ''
-  summary: ''
+  summary: The operation to delete a container service.
   Metadata: {}
 - examples: []
   parameters:
@@ -112,10 +108,6 @@ children:
     isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -137,7 +129,7 @@ children:
   uid: az_vm_container_list
   name: az vm container list
   description: ''
-  summary: ''
+  summary: The operation to list container services.
   Metadata: {}
 - examples: []
   parameters:
@@ -149,10 +141,6 @@ children:
     isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -174,7 +162,7 @@ children:
   uid: az_vm_container_show
   name: az vm container show
   description: ''
-  summary: ''
+  summary: The operation to get a container service.
   Metadata: {}
 - examples: []
   parameters:
@@ -186,18 +174,14 @@ children:
     isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --add
-    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.list key=<value>.'
+    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
     description: ''
   - name: --remove
-    summary: 'Remove a property or an element from a list.  Example: --remove property.list <index>.'
+    summary: 'Remove a property or an element from a list.  Example: --remove property.list <indexToRemove> OR --remove propertyToRemove.'
     description: ''
   - name: --set
-    summary: 'Update an object by specifying a property path and value to set.  Example: --set property1.property2=value.'
+    summary: 'Update an object by specifying a property path and value to set.  Example: --set property1.property2=<value>.'
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -225,7 +209,9 @@ children:
 uid: az_vm_container
 name: az vm container
 description: ''
-summary: ''
+summary: Use Docker-based tools to deploy and manage containers.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

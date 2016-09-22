@@ -34,7 +34,7 @@ children:
   uid: az_resource_group_deployment_operation_list
   name: az resource group deployment operation list
   description: ''
-  summary: ''
+  summary: Gets a list of deployments operations.
   Metadata: {}
 - examples: []
   parameters:
@@ -71,12 +71,14 @@ children:
   uid: az_resource_group_deployment_operation_show
   name: az resource group deployment operation show
   description: ''
-  summary: ''
+  summary: Get a list of deployments operations.
   Metadata: {}
 uid: az_resource_group_deployment_operation
 name: az resource group deployment operation
 description: ''
-summary: ''
+summary: Commands to manage deployment operations.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

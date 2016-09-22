@@ -14,10 +14,6 @@ children:
     isRequired: true
     summary: The name of the table containing the entity to delete.
     description: ''
-  - name: --if-match
-    summary: The client may specify the ETag for the entity on the request in order to compare to the ETag maintained by the service for the purpose of optimistic concurrency. The delete operation will be performed only if the ETag sent by the client matches the value maintained by the server, indicating that the entity has not been modified since it was retrieved by the client. To force an unconditional delete, set If-Match to the wildcard character (*).
-    description: ''
-    defaultValue: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
     description: ''
@@ -39,22 +35,26 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  - name: --if-match
+    summary: The client may specify the ETag for the entity on the request in order to compare to the ETag maintained by the service for the purpose of optimistic concurrency. The delete operation will be performed only if the ETag sent by the client matches the value maintained by the server, indicating that the entity has not been modified since it was retrieved by the client. To force an unconditional delete, set If-Match to the wildcard character (*).
+    description: ''
+    defaultValue: ''
   - name: --account-key
-    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY.'
     description: ''
   - name: --account-name
-    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Environment variable: AZURE_STORAGE_ACCOUNT.'
     description: ''
   - name: --connection-string
-    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    summary: 'Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING.'
     description: ''
   - name: --sas-token
-    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
   uid: az_storage_entity_delete
   name: az storage entity delete
-  description: ''
-  summary: ''
+  description: "Throws if the entity does not exist.\n\nWhen an entity is successfully deleted, the entity is immediately marked \nfor deletion and is no longer accessible to clients. The entity is later \nremoved from the Table service during garbage collection."
+  summary: Deletes an existing entity in a table.
   Metadata: {}
 - examples: []
   parameters:
@@ -94,16 +94,16 @@ children:
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   - name: --account-key
-    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY.'
     description: ''
   - name: --account-name
-    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Environment variable: AZURE_STORAGE_ACCOUNT.'
     description: ''
   - name: --connection-string
-    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    summary: 'Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING.'
     description: ''
   - name: --sas-token
-    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
   uid: az_storage_entity_insert
   name: az storage entity insert
@@ -120,10 +120,6 @@ children:
     isRequired: true
     summary: The name of the table containing the entity to merge.
     description: ''
-  - name: --if-match
-    summary: The client may specify the ETag for the entity on the request in order to compare to the ETag maintained by the service for the purpose of optimistic concurrency. The merge operation will be performed only if the ETag sent by the client matches the value maintained by the server, indicating that the entity has not been modified since it was retrieved by the client. To force an unconditional merge, set If-Match to the wildcard character (*).
-    description: ''
-    defaultValue: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
     description: ''
@@ -145,22 +141,26 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  - name: --if-match
+    summary: The client may specify the ETag for the entity on the request in order to compare to the ETag maintained by the service for the purpose of optimistic concurrency. The merge operation will be performed only if the ETag sent by the client matches the value maintained by the server, indicating that the entity has not been modified since it was retrieved by the client. To force an unconditional merge, set If-Match to the wildcard character (*).
+    description: ''
+    defaultValue: ''
   - name: --account-key
-    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY.'
     description: ''
   - name: --account-name
-    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Environment variable: AZURE_STORAGE_ACCOUNT.'
     description: ''
   - name: --connection-string
-    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    summary: 'Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING.'
     description: ''
   - name: --sas-token
-    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
   uid: az_storage_entity_merge
   name: az storage entity merge
-  description: ''
-  summary: ''
+  description: "Throws \nif the entity does not exist. \n\nThis operation does not replace the existing entity as the update_entity\noperation does. A property cannot be removed with merge_entity.\n\nAny properties with null values are ignored. All other properties will be \nupdated or added."
+  summary: Updates an existing entity by merging the entity's properties.
   Metadata: {}
 - examples: []
   parameters:
@@ -169,9 +169,11 @@ children:
     summary: The name of the table to query.
     description: ''
   - name: --accept
-    summary: Specifies the accepted content type of the response payload. See.
+    summary: Specifies how much metadata to include in the response payload.
     description: ''
-    defaultValue: application/json;odata=minimalmetadata
+    defaultValue: minimal
+    parameterValueGroup:
+    - full, none, minimal
   - name: --filter
     summary: Returns only entities that satisfy the specified filter. Note that no more than 15 discrete comparisons are permitted within a $filter string. See <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd894031.aspx">http://msdn.microsoft.com/en-us/library/windowsazure/dd894031.aspx</a> for more information on constructing filters.
     description: ''
@@ -182,7 +184,7 @@ children:
     summary: The maximum number of entities to return.
     description: ''
   - name: --select
-    summary: Returns only the desired properties of an entity from the set.
+    summary: Space separated list of properties to return for each entity.
     description: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
@@ -206,21 +208,21 @@ children:
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   - name: --account-key
-    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY.'
     description: ''
   - name: --account-name
-    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Environment variable: AZURE_STORAGE_ACCOUNT.'
     description: ''
   - name: --connection-string
-    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    summary: 'Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING.'
     description: ''
   - name: --sas-token
-    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
   uid: az_storage_entity_query
   name: az storage entity query
-  description: ''
-  summary: ''
+  description: "The \ngenerator will lazily follow the continuation tokens returned by the \nservice and stop when all entities have been returned or max_results is \nreached.\n\nIf max_results is specified and the account has more than that number of \nentities, the generator will have a populated next_marker field once it \nfinishes. This marker can be used to create a new generator if more \nresults are desired."
+  summary: Returns a generator to list the entities in the table specified.
   Metadata: {}
 - examples: []
   parameters:
@@ -232,10 +234,6 @@ children:
     isRequired: true
     summary: The name of the table containing the entity to update.
     description: ''
-  - name: --if-match
-    summary: The client may specify the ETag for the entity on the request in order to compare to the ETag maintained by the service for the purpose of optimistic concurrency. The update operation will be performed only if the ETag sent by the client matches the value maintained by the server, indicating that the entity has not been modified since it was retrieved by the client. To force an unconditional update, set If-Match to the wildcard character (*).
-    description: ''
-    defaultValue: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
     description: ''
@@ -257,22 +255,26 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  - name: --if-match
+    summary: The client may specify the ETag for the entity on the request in order to compare to the ETag maintained by the service for the purpose of optimistic concurrency. The update operation will be performed only if the ETag sent by the client matches the value maintained by the server, indicating that the entity has not been modified since it was retrieved by the client. To force an unconditional update, set If-Match to the wildcard character (*).
+    description: ''
+    defaultValue: ''
   - name: --account-key
-    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY.'
     description: ''
   - name: --account-name
-    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Environment variable: AZURE_STORAGE_ACCOUNT.'
     description: ''
   - name: --connection-string
-    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    summary: 'Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING.'
     description: ''
   - name: --sas-token
-    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
   uid: az_storage_entity_replace
   name: az storage entity replace
-  description: ''
-  summary: ''
+  description: "Throws if the entity does not exist. \nThe update_entity operation replaces the entire entity and can be used to \nremove properties."
+  summary: Updates an existing entity in a table.
   Metadata: {}
 - examples: []
   parameters:
@@ -289,11 +291,11 @@ children:
     summary: The name of the table to get the entity from.
     description: ''
   - name: --accept
-    summary: Specifies the accepted content type of the response payload. See.
+    summary: Specifies the accepted content type of the response payload. See TablePayloadFormat for possible values.
     description: ''
     defaultValue: application/json;odata=minimalmetadata
   - name: --select
-    summary: Returns only the desired properties of an entity from the set.
+    summary: Space separated list of properties to return for each entity.
     description: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
@@ -317,26 +319,28 @@ children:
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   - name: --account-key
-    summary: 'Storage account key. Must be used in conjunction with storage account name. Var: AZURE_STORAGE_KEY.'
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY.'
     description: ''
   - name: --account-name
-    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Var: AZURE_STORAGE_ACCOUNT.'
+    summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Environment variable: AZURE_STORAGE_ACCOUNT.'
     description: ''
   - name: --connection-string
-    summary: 'Storage account connection string. Var: AZURE_STORAGE_CONNECTION_STRING.'
+    summary: 'Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING.'
     description: ''
   - name: --sas-token
-    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Var: AZURE_SAS_TOKEN.'
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
   uid: az_storage_entity_show
   name: az storage entity show
-  description: ''
-  summary: ''
+  description: Throws if the entity does not exist.
+  summary: Get an entity from the specified table.
   Metadata: {}
 uid: az_storage_entity
 name: az storage entity
 description: ''
-summary: ''
+summary: Commands to manage Storage table entities.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

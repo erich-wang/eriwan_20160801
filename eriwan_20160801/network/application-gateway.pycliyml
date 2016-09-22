@@ -64,7 +64,7 @@ children:
     description: ''
     defaultValue: Standard
   - name: --subnet
-    summary: Name or ID of the resource.  Creates new by default.  Use "" for none.
+    summary: Name or ID of the resource.  Creates new by default.
     description: ''
     defaultValue: default
   - name: --subnet-address-prefix
@@ -102,18 +102,10 @@ children:
   uid: az_network_application-gateway_create
   name: az network application-gateway create
   description: ''
-  summary: ''
+  summary: Create or update a virtual machine.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the applicationgateway.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -132,10 +124,22 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the application gateway.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   uid: az_network_application-gateway_delete
   name: az network application-gateway delete
   description: ''
-  summary: ''
+  summary: >-
+    The delete ApplicationGateway operation deletes the specified
+
+    application gateway.
   Metadata: {}
 - examples: []
   parameters:
@@ -167,14 +171,6 @@ children:
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the applicationgateway.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -192,22 +188,26 @@ children:
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the application gateway.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   uid: az_network_application-gateway_show
   name: az network application-gateway show
   description: ''
-  summary: ''
+  summary: >-
+    The Get ApplicationGateway operation retrieves information about the
+
+    specified application gateway.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the application gateway.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -225,22 +225,26 @@ children:
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the application gateway.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   uid: az_network_application-gateway_start
   name: az network application-gateway start
   description: ''
-  summary: ''
+  summary: >-
+    The Start ApplicationGateway operation starts application gateway in
+
+    the specified resource group through Network resource provider.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the application gateway.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -258,30 +262,34 @@ children:
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the application gateway.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   uid: az_network_application-gateway_stop
   name: az network application-gateway stop
   description: ''
-  summary: ''
+  summary: >-
+    The STOP ApplicationGateway operation stops application gateway in the
+
+    specified resource group through Network resource provider.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the applicationgateway.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
   - name: --add
-    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.list key=<value>.'
+    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
     description: ''
   - name: --remove
-    summary: 'Remove a property or an element from a list.  Example: --remove property.list <index>.'
+    summary: 'Remove a property or an element from a list.  Example: --remove property.list <indexToRemove> OR --remove propertyToRemove.'
     description: ''
   - name: --set
-    summary: 'Update an object by specifying a property path and value to set.  Example: --set property1.property2=value.'
+    summary: 'Update an object by specifying a property path and value to set.  Example: --set property1.property2=<value>.'
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -300,6 +308,15 @@ children:
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the application gateway.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   uid: az_network_application-gateway_update
   name: az network application-gateway update
@@ -309,7 +326,9 @@ children:
 uid: az_network_application-gateway
 name: az network application-gateway
 description: ''
-summary: ''
+summary: Provides application-level routing and load balancing services.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

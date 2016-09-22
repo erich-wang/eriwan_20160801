@@ -44,7 +44,7 @@ children:
   uid: az_resource_group_deployment_create
   name: az resource group deployment create
   description: ''
-  summary: ''
+  summary: Deploy resources with an ARM template.
   Metadata: {}
 - examples: []
   parameters:
@@ -77,7 +77,7 @@ children:
   uid: az_resource_group_deployment_exists
   name: az resource group deployment exists
   description: ''
-  summary: ''
+  summary: Checks whether deployment exists.
   Metadata: {}
 - examples: []
   parameters:
@@ -145,7 +145,7 @@ children:
   uid: az_resource_group_deployment_list
   name: az resource group deployment list
   description: ''
-  summary: ''
+  summary: Get a list of deployments.
   Metadata: {}
 - examples: []
   parameters:
@@ -178,7 +178,7 @@ children:
   uid: az_resource_group_deployment_show
   name: az resource group deployment show
   description: ''
-  summary: ''
+  summary: Get a deployment.
   Metadata: {}
 - examples: []
   parameters:
@@ -220,12 +220,14 @@ children:
   uid: az_resource_group_deployment_validate
   name: az resource group deployment validate
   description: ''
-  summary: ''
+  summary: Validate an ARM template.
   Metadata: {}
 uid: az_resource_group_deployment
 name: az resource group deployment
 description: ''
-summary: ''
+summary: Commands to execute or manage ARM deployments.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

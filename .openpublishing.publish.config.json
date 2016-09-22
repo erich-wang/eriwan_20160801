@@ -26,17 +26,17 @@
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
-      "url": "https://github.com/erich-wang/templates.docs.msft",
-      "branch": "develop",
+      "url": "https://github.com/Microsoft/templates.docs.msft",
+      "branch": "master",
       "branch_mapping": {}
     }
   ],
-    "dependent_packages": [
+  "dependent_packages": [
     {
       "path_to_root": "azurecli",
       "id": "opbuild.templates.azurecli",
-      "version": "1.16.0-alpha-085-g1047a52",
-      "nuget_feed": "https://www.myget.org/F/op-dev/api/v2"
+      "version": "latest-prerelease",
+      "nuget_feed": "https://www.myget.org/F/op/api/v2"
     }
-   ]
+  ]
 }

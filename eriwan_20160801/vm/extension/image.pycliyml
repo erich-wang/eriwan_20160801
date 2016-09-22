@@ -38,7 +38,7 @@ children:
   uid: az_vm_extension_image_list
   name: az vm extension image list
   description: ''
-  summary: ''
+  summary: Vm extension image list.
   Metadata: {}
 - examples: []
   parameters:
@@ -50,10 +50,6 @@ children:
     isRequired: true
     summary: ''
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -75,7 +71,7 @@ children:
   uid: az_vm_extension_image_list-names
   name: az vm extension image list-names
   description: ''
-  summary: ''
+  summary: Gets a list of virtual machine extension image types.
   Metadata: {}
 - examples: []
   parameters:
@@ -91,10 +87,6 @@ children:
     isRequired: true
     summary: ''
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --filter
     summary: The filter to apply on the operation.
     description: ''
@@ -125,7 +117,7 @@ children:
   uid: az_vm_extension_image_list-versions
   name: az vm extension image list-versions
   description: ''
-  summary: ''
+  summary: Gets a list of virtual machine extension image versions.
   Metadata: {}
 - examples: []
   parameters:
@@ -145,10 +137,6 @@ children:
     isRequired: true
     summary: ''
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -170,12 +158,14 @@ children:
   uid: az_vm_extension_image_show
   name: az vm extension image show
   description: ''
-  summary: ''
+  summary: Gets a virtual machine extension image.
   Metadata: {}
 uid: az_vm_extension_image
 name: az vm extension image
 description: ''
-summary: ''
+summary: Find VM extensions available for your subscription and region.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

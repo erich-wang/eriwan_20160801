@@ -2,14 +2,6 @@ examples: []
 children:
 - examples: []
   parameters:
-  - name: --connection-name
-    isRequired: true
-    summary: The virtual network gateway connection reset shared key Name.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
   - name: --key-length
     summary: The virtual network connection reset shared key length.
     description: ''
@@ -31,21 +23,29 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  - name: --connection-name
+    summary: The virtual network gateway connection reset shared key Name.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   uid: az_network_vpn-connection_shared-key_reset
   name: az network vpn-connection shared-key reset
   description: ''
-  summary: ''
+  summary: >-
+    The VirtualNetworkGatewayConnectionResetSharedKey operation resets the
+
+    virtual network gateway connection shared key for passed virtual
+
+    network gateway connection in the specified resource group through
+
+    Network resource provider.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The virtual network gateway connection shared key name.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -63,24 +63,39 @@ children:
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The virtual network gateway connection shared key name.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   uid: az_network_vpn-connection_shared-key_show
   name: az network vpn-connection shared-key show
   description: ''
-  summary: ''
+  summary: >-
+    The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves
+
+    information about the specified virtual network gateway connection
+
+    shared key through Network resource provider.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --connection-name
-    isRequired: true
-    summary: The virtual network gateway connection name.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
   - name: --value
     summary: The virtual network connection shared key value.
+    description: ''
+  - name: --add
+    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
+    description: ''
+  - name: --remove
+    summary: 'Remove a property or an element from a list.  Example: --remove property.list <indexToRemove> OR --remove propertyToRemove.'
+    description: ''
+  - name: --set
+    summary: 'Update an object by specifying a property path and value to set.  Example: --set property1.property2=<value>.'
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -99,6 +114,15 @@ children:
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --connection-name
+    summary: The name of the virtual network gateway connection.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   uid: az_network_vpn-connection_shared-key_update
   name: az network vpn-connection shared-key update
@@ -108,7 +132,9 @@ children:
 uid: az_network_vpn-connection_shared-key
 name: az network vpn-connection shared-key
 description: ''
-summary: ''
+summary: Manage VPN shared keys.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

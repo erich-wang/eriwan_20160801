@@ -2,22 +2,6 @@ examples: []
 children:
 - examples: []
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the virtual machine extension.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --vm-name
-    isRequired: true
-    summary: The name of the virtual machine.
-    description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -35,22 +19,26 @@ children:
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual machine extension.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
+  - name: --vm-name
+    summary: The name of the virtual machine.
     description: ''
   uid: az_vm_extension_delete
   name: az vm extension delete
   description: ''
-  summary: ''
+  summary: The operation to delete the extension.
   Metadata: {}
 - examples: []
   parameters:
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --vm-name
-    isRequired: true
-    summary: The name of the virtual machine.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -68,6 +56,15 @@ children:
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
+  - name: --vm-name
+    summary: The name of the virtual machine.
     description: ''
   uid: az_vm_extension_list
   name: az vm extension list
@@ -76,26 +73,14 @@ children:
   Metadata: {}
 - examples:
   - title: Add a new linux user
-    code: az vm extension set -n VMAccessForLinux --publisher Microsoft.OSTCExtensions --version 1.4 --vm-name myvm --resource-group yugangw --private-config '{"username":"user1", "ssh_key":"ssh_rsa ..."}'
+    code: az vm extension set -n VMAccessForLinux --publisher Microsoft.OSTCExtensions --version 1.4 --vm-name myvm --resource-group mygroup --protected-settings '{"username":"user1", "ssh_key":"ssh_rsa ..."}'
   parameters:
-  - name: --name -n
-    isRequired: true
-    summary: The name of the extension.
-    description: ''
   - name: --publisher
     isRequired: true
     summary: The name of extension publisher.
     description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --vm-name
-    isRequired: true
-    summary: The name of the virtual machine.
-    description: ''
-  - name: --auto-upgrade-minor-version
-    summary: Auto upgrade to the newer version if available.
+  - name: --no-auto-upgrade
+    summary: By doing this, extension system will not pick the highest minor version for the specified version number, and will not auto update to the latest build/revision number on any VM updates in future.
     description: ''
   - name: --protected-settings
     summary: Protected settings or a file path with such contents.
@@ -124,29 +109,25 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_vm_extension_set
-  name: az vm extension set
-  description: ''
-  summary: ''
-  Metadata: {}
-- examples: []
-  parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
   - name: --name -n
-    isRequired: true
-    summary: The name of the virtual machine extension.
+    summary: The name of the extension.
     description: ''
   - name: --resource-group -g
-    isRequired: true
     summary: Name of resource group.
     description: ''
   - name: --vm-name
-    isRequired: true
     summary: The name of the virtual machine.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
+  uid: az_vm_extension_set
+  name: az vm extension set
+  description: ''
+  summary: Create/update extensions for a VM in a resource group.
+  Metadata: {}
+- examples: []
+  parameters:
   - name: --expand
     summary: The expand expression to apply on the operation.
     description: ''
@@ -168,15 +149,29 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual machine extension.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
+  - name: --vm-name
+    summary: The name of the virtual machine.
+    description: ''
   uid: az_vm_extension_show
   name: az vm extension show
   description: ''
-  summary: ''
+  summary: The operation to get the extension.
   Metadata: {}
 uid: az_vm_extension
 name: az vm extension
 description: ''
-summary: ''
+summary: Extend the functionality of your VMs with vm extensions.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

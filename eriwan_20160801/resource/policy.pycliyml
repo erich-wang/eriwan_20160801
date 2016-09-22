@@ -2,7 +2,18 @@ examples: []
 children:
 - examples:
   - title: Create a policy with following rules
-    code: "{\n    \"if\": \n    {\n        \"source\": \"action\",\n        \"equals\": \"Microsoft.Storage/storageAccounts/write\"\n    },\n    \"then\":\n    {\n        \"effect\": \"deny\"\n    }\n}"
+    code: >-
+      {
+          "if":
+          {
+              "source": "action",
+              "equals": "Microsoft.Storage/storageAccounts/write"
+          },
+          "then":
+          {
+              "effect": "deny"
+          }
+      }
   parameters:
   - name: --name -n
     isRequired: true
@@ -68,7 +79,7 @@ children:
   uid: az_resource_policy_delete
   name: az resource policy delete
   description: ''
-  summary: ''
+  summary: Deletes the policy definition.
   Metadata: {}
 - examples: []
   parameters:
@@ -96,7 +107,7 @@ children:
   uid: az_resource_policy_list
   name: az resource policy list
   description: ''
-  summary: ''
+  summary: Gets all the policy definitions of a subscription.
   Metadata: {}
 - examples: []
   parameters:
@@ -125,7 +136,7 @@ children:
   uid: az_resource_policy_show
   name: az resource policy show
   description: ''
-  summary: ''
+  summary: Gets the policy definition.
   Metadata: {}
 - examples: []
   parameters:
@@ -168,7 +179,9 @@ children:
 uid: az_resource_policy
 name: az resource policy
 description: ''
-summary: ''
+summary: Commands to manage resource policies.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

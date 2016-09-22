@@ -40,7 +40,7 @@ children:
   uid: az_vm_nic_add
   name: az vm nic add
   description: ''
-  summary: ''
+  summary: Add network interface configurations to the virtual machine.
   Metadata: {}
 - examples: []
   parameters:
@@ -82,7 +82,7 @@ children:
   uid: az_vm_nic_delete
   name: az vm nic delete
   description: ''
-  summary: ''
+  summary: Remove network interface configurations from the virtual machine.
   Metadata: {}
 - examples: []
   parameters:
@@ -124,12 +124,14 @@ children:
   uid: az_vm_nic_update
   name: az vm nic update
   description: ''
-  summary: ''
+  summary: Update network interface configurations of the virtual machine.
   Metadata: {}
 uid: az_vm_nic
 name: az vm nic
 description: ''
-summary: ''
+summary: Manage VM network interfaces, see also 'az network nic'.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

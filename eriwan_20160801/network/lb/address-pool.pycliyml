@@ -8,7 +8,7 @@ children:
     description: ''
   - name: --name -n
     isRequired: true
-    summary: The name of the address-pool.
+    summary: The name of the backend address pool.
     description: ''
   - name: --resource-group -g
     isRequired: true
@@ -45,7 +45,7 @@ children:
     description: ''
   - name: --name -n
     isRequired: true
-    summary: The name of the address-pool.
+    summary: The name of the backend address pool.
     description: ''
   - name: --resource-group -g
     isRequired: true
@@ -115,7 +115,7 @@ children:
     description: ''
   - name: --name -n
     isRequired: true
-    summary: The name of the address-pool.
+    summary: The name of the backend address pool.
     description: ''
   - name: --resource-group -g
     isRequired: true
@@ -147,7 +147,9 @@ children:
 uid: az_network_lb_address-pool
 name: az network lb address-pool
 description: ''
-summary: ''
+summary: Manage LB address pools.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

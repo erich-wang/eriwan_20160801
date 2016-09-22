@@ -38,7 +38,7 @@ children:
   uid: az_vm_image_list
   name: az vm image list
   description: ''
-  summary: ''
+  summary: Vm image list.
   Metadata: {}
 - examples: []
   parameters:
@@ -50,10 +50,6 @@ children:
     isRequired: true
     summary: ''
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -75,7 +71,7 @@ children:
   uid: az_vm_image_list-offers
   name: az vm image list-offers
   description: ''
-  summary: ''
+  summary: Gets a list of virtual machine image offers.
   Metadata: {}
 - examples: []
   parameters:
@@ -83,10 +79,6 @@ children:
     isRequired: true
     summary: Location.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -108,7 +100,7 @@ children:
   uid: az_vm_image_list-publishers
   name: az vm image list-publishers
   description: ''
-  summary: ''
+  summary: Gets a list of virtual machine image publishers.
   Metadata: {}
 - examples: []
   parameters:
@@ -124,10 +116,6 @@ children:
     isRequired: true
     summary: ''
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -149,7 +137,7 @@ children:
   uid: az_vm_image_list-skus
   name: az vm image list-skus
   description: ''
-  summary: ''
+  summary: Gets a list of virtual machine image skus.
   Metadata: {}
 - examples: []
   parameters:
@@ -173,10 +161,6 @@ children:
     isRequired: true
     summary: ''
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -198,12 +182,14 @@ children:
   uid: az_vm_image_show
   name: az vm image show
   description: ''
-  summary: ''
+  summary: Gets a virtual machine image.
   Metadata: {}
 uid: az_vm_image
 name: az vm image
 description: ''
-summary: ''
+summary: VM images available on the Azure marketplace.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

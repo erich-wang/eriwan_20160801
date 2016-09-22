@@ -27,12 +27,14 @@ children:
   uid: az_network_list-usages
   name: az network list-usages
   description: ''
-  summary: ''
+  summary: Lists compute usages for a subscription.
   Metadata: {}
 uid: az_network
 name: az network
 description: ''
-summary: ''
+summary: Manages Network resources.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

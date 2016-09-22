@@ -45,7 +45,7 @@ children:
   uid: az_vm_availability-set_create
   name: az vm availability-set create
   description: For more info, see <a href="https://blogs.technet.microsoft.com/yungchou/2013/05/14/window-azure-fault-domain-and-upgrade-domain-explained-explained-reprised/">https://blogs.technet.microsoft.com/yungchou/2013/05/14/window-azure-fault-domain-and-upgrade-domain-explained-explained-reprised/</a>.
-  summary: ''
+  summary: Create or update a virtual machine.
   Metadata: {}
 - examples: []
   parameters:
@@ -57,10 +57,6 @@ children:
     isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -82,7 +78,7 @@ children:
   uid: az_vm_availability-set_delete
   name: az vm availability-set delete
   description: ''
-  summary: ''
+  summary: The operation to delete the availability set.
   Metadata: {}
 - examples: []
   parameters:
@@ -90,10 +86,6 @@ children:
     isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -115,7 +107,7 @@ children:
   uid: az_vm_availability-set_list
   name: az vm availability-set list
   description: ''
-  summary: ''
+  summary: The operation to list the availability sets.
   Metadata: {}
 - examples: []
   parameters:
@@ -127,10 +119,6 @@ children:
     isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -152,7 +140,10 @@ children:
   uid: az_vm_availability-set_list-sizes
   name: az vm availability-set list-sizes
   description: ''
-  summary: ''
+  summary: >-
+    Lists all available virtual machine sizes that can be used to create a
+
+    new virtual machine in an existing availability set.
   Metadata: {}
 - examples: []
   parameters:
@@ -164,10 +155,6 @@ children:
     isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --api-version
-    summary: Client Api Version.
-    description: ''
-    defaultValue: 2016-03-30
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -189,7 +176,7 @@ children:
   uid: az_vm_availability-set_show
   name: az vm availability-set show
   description: ''
-  summary: ''
+  summary: The operation to get the availability set.
   Metadata: {}
 - examples: []
   parameters:
@@ -202,13 +189,13 @@ children:
     summary: Name of resource group.
     description: ''
   - name: --add
-    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.list key=<value>.'
+    summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
     description: ''
   - name: --remove
-    summary: 'Remove a property or an element from a list.  Example: --remove property.list <index>.'
+    summary: 'Remove a property or an element from a list.  Example: --remove property.list <indexToRemove> OR --remove propertyToRemove.'
     description: ''
   - name: --set
-    summary: 'Update an object by specifying a property path and value to set.  Example: --set property1.property2=value.'
+    summary: 'Update an object by specifying a property path and value to set.  Example: --set property1.property2=<value>.'
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -236,7 +223,9 @@ children:
 uid: az_vm_availability-set
 name: az vm availability-set
 description: ''
-summary: ''
+summary: Group resources into availability-sets for high-availability requirements.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82

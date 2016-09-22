@@ -20,10 +20,10 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_account_clear
+  uid: clear
   name: az account clear
-  description: ''
-  summary: ''
+  description: To clear individual, use 'logout'.
+  summary: Clear all stored subscriptions.
   Metadata: {}
 - examples: []
   parameters:
@@ -48,7 +48,7 @@ children:
   uid: az_account_list
   name: az account list
   description: ''
-  summary: ''
+  summary: List the imported subscriptions.
   Metadata: {}
 - examples: []
   parameters:
@@ -70,16 +70,16 @@ children:
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_account_list-location
-  name: az account list-location
+  uid: az_account_list-locations
+  name: az account list-locations
   description: ''
   summary: ''
   Metadata: {}
 - examples: []
   parameters:
-  - name: --subscription-name-or-id -n
+  - name: --name -n
     isRequired: true
-    summary: Subscription id. Unique name also works.
+    summary: Name or ID of subscription.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -102,12 +102,14 @@ children:
   uid: az_account_set
   name: az account set
   description: ''
-  summary: ''
+  summary: Set the current subscription.
   Metadata: {}
 uid: az_account
 name: az account
 description: ''
-summary: ''
+summary: Manages stored and default subscriptions.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-profile/azure/cli/command_modules/profile/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-profile/azure/cli/command_modules/profile/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
