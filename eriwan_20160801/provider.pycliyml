@@ -1,6 +1,8 @@
+htmlId: provider
 examples: []
 children:
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --expand
     summary: The $expand query parameter. e.g. To include property aliases in response, use $expand=resourceTypes/aliases.
@@ -16,19 +18,20 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_resource_provider_list
-  name: az resource provider list
+  uid: az_provider_list
+  name: az provider list
   description: ''
   summary: Gets a list of resource providers.
   Metadata: {}
-- examples: []
+- htmlId: register
+  examples: []
   parameters:
   - name: --namespace -n
     isRequired: true
@@ -45,19 +48,20 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_resource_provider_register
-  name: az resource provider register
+  uid: az_provider_register
+  name: az provider register
   description: ''
-  summary: ''
+  summary: Register a provider.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --namespace -n
     isRequired: true
@@ -77,19 +81,20 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_resource_provider_show
-  name: az resource provider show
+  uid: az_provider_show
+  name: az provider show
   description: ''
   summary: Gets a resource provider.
   Metadata: {}
-- examples: []
+- htmlId: unregister
+  examples: []
   parameters:
   - name: --namespace -n
     isRequired: true
@@ -106,24 +111,26 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_resource_provider_unregister
-  name: az resource provider unregister
+  uid: az_provider_unregister
+  name: az provider unregister
   description: ''
-  summary: ''
+  summary: Unregister a provider.
   Metadata: {}
-uid: az_resource_provider
-name: az resource provider
+uid: az_provider
+name: az provider
 description: ''
-summary: Commands to manage resource providers.
+summary: Manage resource providers.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/487f0196fc30715f5cf70b7c781185b5c2a5bf18/src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
+  updated_at: 11/15/2016 10:24:07 PM
+  ms.date: 11/15/2016

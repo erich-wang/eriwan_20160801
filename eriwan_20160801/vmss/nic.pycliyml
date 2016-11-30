@@ -1,25 +1,9 @@
+htmlId: nic
 examples: []
 children:
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
     description: ''
@@ -29,16 +13,6 @@ children:
   - name: --vmss-name
     summary: Scale set name.
     description: ''
-  uid: az_vmss_nic_list
-  name: az vmss nic list
-  description: ''
-  summary: >-
-    The list network interface operation retrieves information about all
-
-    network interfaces in a virtual machine scale set.
-  Metadata: {}
-- examples: []
-  parameters:
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -50,13 +24,21 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  uid: az_vmss_nic_list
+  name: az vmss nic list
+  description: ''
+  summary: The list network interface operation retrieves information about all network interfaces in a virtual machine scale set.
+  Metadata: {}
+- htmlId: list-vm-nics
+  examples: []
+  parameters:
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
     description: ''
@@ -69,21 +51,6 @@ children:
   - name: --vmss-name
     summary: Scale set name.
     description: ''
-  uid: az_vmss_nic_list-vm-nics
-  name: az vmss nic list-vm-nics
-  description: ''
-  summary: >-
-    The list network interface operation retrieves information about all
-
-    network interfaces in a virtual machine from a virtual machine scale
-
-    set.
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --expand
-    summary: Expand references resources.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -95,12 +62,23 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_vmss_nic_list-vm-nics
+  name: az vmss nic list-vm-nics
+  description: ''
+  summary: The list network interface operation retrieves information about all network interfaces in a virtual machine from a virtual machine scale set.
+  Metadata: {}
+- htmlId: show
+  examples: []
+  parameters:
+  - name: --expand
+    summary: Expand references resources.
     description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
@@ -117,13 +95,28 @@ children:
   - name: --vmss-name
     summary: Scale set name.
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_vmss_nic_show
   name: az vmss nic show
   description: ''
-  summary: >-
-    The Get network interface operation retrieves information about the
-
-    specified network interface in a virtual machine scale set.
+  summary: The Get network interface operation retrieves information about the specified network interface in a virtual machine scale set.
   Metadata: {}
 uid: az_vmss_nic
 name: az vmss nic
@@ -133,4 +126,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/487f0196fc30715f5cf70b7c781185b5c2a5bf18/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  updated_at: 11/15/2016 10:24:07 PM
+  ms.date: 11/15/2016

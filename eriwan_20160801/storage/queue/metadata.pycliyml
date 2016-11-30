@@ -1,6 +1,8 @@
+htmlId: metadata
 examples: []
 children:
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -8,24 +10,6 @@ children:
     description: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   - name: --account-key
     summary: 'Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY.'
@@ -39,15 +23,31 @@ children:
   - name: --sas-token
     summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_storage_queue_metadata_show
   name: az storage queue metadata show
   description: Metadata is associated with the queue as name-value pairs.
-  summary: >-
-    Retrieves user-defined metadata and queue properties on the specified
-
-    queue.
+  summary: Retrieves user-defined metadata and queue properties on the specified queue.
   Metadata: {}
-- examples: []
+- htmlId: update
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -59,24 +59,6 @@ children:
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
     description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
   - name: --account-key
     summary: 'Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY.'
     description: ''
@@ -89,20 +71,37 @@ children:
   - name: --sas-token
     summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_storage_queue_metadata_update
   name: az storage queue metadata update
-  description: >-
-    Metadata is
-
-    associated with the queue as name-value pairs.
+  description: Metadata is associated with the queue as name-value pairs.
   summary: Sets user-defined metadata on the specified queue.
   Metadata: {}
 uid: az_storage_queue_metadata
 name: az storage queue metadata
 description: ''
-summary: Commands to manage your queue metadata.
+summary: Manage storage queue metadata.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/13c86b8504a4d4f20c86842860d45f03ae184710/src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
+  updated_at: 11/22/2016 8:05:54 PM
+  ms.date: 11/22/2016

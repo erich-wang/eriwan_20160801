@@ -1,6 +1,8 @@
+htmlId: frontend-ip
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -21,10 +23,10 @@ children:
     summary: Name or ID of the existing public IP to associate with the configuration.
     description: ''
   - name: --subnet
-    summary: Name or ID of an existing subnet.
+    summary: Name or ID of an existing subnet. If name is specified, also specify --vnet-name.
     description: ''
   - name: --vnet-name
-    summary: The VNET name associated with the subnet name.
+    summary: The virtual network (VNet) associated with the subnet (Omit if supplying a subnet id).
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -37,7 +39,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -47,9 +49,10 @@ children:
   uid: az_network_lb_frontend-ip_create
   name: az network lb frontend-ip create
   description: ''
-  summary: ''
+  summary: Create a new load balancer front-end IP address.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -74,7 +77,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -84,9 +87,10 @@ children:
   uid: az_network_lb_frontend-ip_delete
   name: az network lb frontend-ip delete
   description: ''
-  summary: ''
+  summary: Delete a load balancer front-end IP address.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -107,7 +111,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -117,9 +121,10 @@ children:
   uid: az_network_lb_frontend-ip_list
   name: az network lb frontend-ip list
   description: ''
-  summary: ''
+  summary: List front-end IP addresses in a load balancer.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -144,7 +149,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -154,9 +159,10 @@ children:
   uid: az_network_lb_frontend-ip_show
   name: az network lb frontend-ip show
   description: ''
-  summary: ''
+  summary: Show details of a load balancer front-end IP address.
   Metadata: {}
-- examples: []
+- htmlId: update
+  examples: []
   parameters:
   - name: --private-ip-address
     summary: Static private IP address to associate with the configuration.
@@ -165,10 +171,22 @@ children:
     summary: Name or ID of the existing public IP to associate with the configuration.
     description: ''
   - name: --subnet
-    summary: Name or ID of an existing subnet.
+    summary: Name or ID of an existing subnet. If name is specified, also specify --vnet-name.
     description: ''
   - name: --vnet-name
-    summary: The VNET name associated with the subnet name.
+    summary: The virtual network (VNet) associated with the subnet (Omit if supplying a subnet id).
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --lb-name
+    summary: The load balancer name.
+    description: ''
+  - name: --name -n
+    summary: The name of the frontend IP configuration.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
@@ -190,36 +208,26 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --lb-name
-    summary: The load balancer name.
-    description: ''
-  - name: --name -n
-    summary: The name of the frontend IP configuration.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_network_lb_frontend-ip_update
   name: az network lb frontend-ip update
   description: ''
-  summary: ''
+  summary: Update a load balancer front-end IP address.
   Metadata: {}
 uid: az_network_lb_frontend-ip
 name: az network lb frontend-ip
 description: ''
-summary: Manage LB front-end IP addresses.
+summary: Manage load balancer front-end IP addresses.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/3e4d2600fa4af979083b93441662fc49451a435b/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  updated_at: 11/29/2016 12:59:48 AM
+  ms.date: 11/29/2016

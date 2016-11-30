@@ -1,6 +1,8 @@
+htmlId: assignment
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --policy
     isRequired: true
@@ -10,13 +12,13 @@ children:
     summary: Display name of the assignment.
     description: ''
   - name: --name -n
-    summary: Name of the assignment.
+    summary: Name of the new assignment.
     description: ''
   - name: --resource-group -g
     summary: The resource group where the policy will be applied.
     description: ''
-  - name: --resource-id
-    summary: Id of the associated resource where the policy will be applied.
+  - name: --scope
+    summary: Scope at which this policy assignment applies to, e.g., /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333, /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup, or /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup/providers/Microsoft.Compute/virtualMachines/myVM.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -29,7 +31,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -39,9 +41,10 @@ children:
   uid: az_resource_policy_assignment_create
   name: az resource policy assignment create
   description: ''
-  summary: ''
+  summary: Creates a resource policy assignment.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -50,8 +53,8 @@ children:
   - name: --resource-group -g
     summary: The resource group where the policy will be applied.
     description: ''
-  - name: --resource-id
-    summary: Id of the associated resource where the policy will be applied.
+  - name: --scope
+    summary: Scope at which this policy assignment applies to, e.g., /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333, /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup, or /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup/providers/Microsoft.Compute/virtualMachines/myVM.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -64,7 +67,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -74,21 +77,19 @@ children:
   uid: az_resource_policy_assignment_delete
   name: az resource policy assignment delete
   description: ''
-  summary: ''
+  summary: Deletes a resource policy assignment.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
-  - name: --include-inherited
-    summary: Show assignments from parent scopes.
+  - name: --disable-scope-strict-match
+    summary: Include assignment either inhertied from parent scope or at child scope.
     description: ''
   - name: --resource-group -g
     summary: The resource group where the policy will be applied.
     description: ''
-  - name: --resource-id
-    summary: Id of the associated resource where the policy will be applied.
-    description: ''
-  - name: --show-all
-    summary: Show all the assignment under the current subscription.
+  - name: --scope
+    summary: Scope at which this policy assignment applies to, e.g., /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333, /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup, or /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup/providers/Microsoft.Compute/virtualMachines/myVM.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -101,7 +102,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -111,9 +112,10 @@ children:
   uid: az_resource_policy_assignment_list
   name: az resource policy assignment list
   description: ''
-  summary: ''
+  summary: List resource policy assignments.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -122,8 +124,8 @@ children:
   - name: --resource-group -g
     summary: The resource group where the policy will be applied.
     description: ''
-  - name: --resource-id
-    summary: Id of the associated resource where the policy will be applied.
+  - name: --scope
+    summary: Scope at which this policy assignment applies to, e.g., /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333, /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup, or /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup/providers/Microsoft.Compute/virtualMachines/myVM.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -136,7 +138,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -146,14 +148,16 @@ children:
   uid: az_resource_policy_assignment_show
   name: az resource policy assignment show
   description: ''
-  summary: ''
+  summary: Shows a resource policy assignment.
   Metadata: {}
 uid: az_resource_policy_assignment
 name: az resource policy assignment
 description: ''
-summary: Commands to manage resource policy assignments.
+summary: Manage resource policy assignments.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/487f0196fc30715f5cf70b7c781185b5c2a5bf18/src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
+  updated_at: 11/15/2016 10:24:07 PM
+  ms.date: 11/15/2016

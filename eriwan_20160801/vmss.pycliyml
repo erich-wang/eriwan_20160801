@@ -1,10 +1,12 @@
+htmlId: vmss
 examples: []
 children:
-- examples:
+- htmlId: create
+  examples:
   - title: Windows scaleset with 5 instances, a load balancer and a public IP address
-    code: az vmss create -n myName -g myResourceGroup --admin-password MyPassword123 --instance-count 5
+    code: az vmss create -n myName -g myResourceGroup --admin-password MyPassword123 --instance-count 5 --image Win2012R2Datacenter
   - title: Linux scaleset with SSH authentication, a public IP address, a DNS entry, an existing load balancer, and an existing virtual network
-    code: az vmss create  -n myName -g myResourceGroup --dns-name-for-public-ip myGloballyUniqueDnsName --load-balancer-type existing --load-balancer-name myLoadBalancer --virtual-network-type existing --virtual-network-name myVNET --subnet-name mySubnet --image canonical:Ubuntu_Snappy_Core:15.04:2016.0318.1949 --authentication-type ssh --ssh-key-value "<ssh-key-value or ssh-key-file-path>"
+    code: az vmss create  -n myName -g myResourceGroup --dns-name-for-public-ip myGloballyUniqueDnsName --load-balancer-type existing --load-balancer-name myLoadBalancer --virtual-network-type existing --virtual-network-name myVNET --subnet-name mySubnet --image <linux image from 'az vm image list'> --authentication-type ssh --ssh-key-value "<ssh-key-value or ssh-key-file-path>"
   parameters:
   - name: --image
     isRequired: true
@@ -34,7 +36,7 @@ children:
     summary: Password or SSH public key authentication. Defaults to password for Windows and SSH public key for Linux.
     description: ''
     parameterValueGroup:
-    - ssh, password
+    - password, ssh
   - name: --custom-os-disk-type
     summary: Custom image OS type.
     description: ''
@@ -47,7 +49,7 @@ children:
     description: ''
     defaultValue: 2
   - name: --load-balancer
-    summary: Name or ID of the resource.  Creates new by default.  Use "" for none.
+    summary: Name or ID of the resource.  Creates new by default. Use "" for none.
     description: ''
   - name: --load-balancer-backend-pool-name
     summary: Name of load balancer backend pool.
@@ -56,7 +58,7 @@ children:
     summary: Name of load balancer NAT pool.
     description: ''
   - name: --location -l
-    summary: Location.
+    summary: Location in which to create the VM and related resources. If not specified, defaults to the resource group's location.
     description: ''
   - name: --nat-backend-port
     summary: Backend port to open with NAT rules.  Defaults to 22 on Linux and 3389 on Windows.
@@ -66,7 +68,7 @@ children:
     description: ''
     defaultValue: osdiskimage
   - name: --public-ip-address
-    summary: Name or ID of the resource.  Creates new by default.  Use "" for none.
+    summary: Name or ID of the resource.  Creates new by default. Use "" for none.
     description: ''
   - name: --public-ip-address-allocation
     summary: ''
@@ -95,6 +97,8 @@ children:
     summary: The VM storage type.
     description: ''
     defaultValue: Standard_LRS
+    parameterValueGroup:
+    - Premium_LRS, Standard_GRS, Standard_LRS, Standard_RAGRS, Standard_ZRS
   - name: --subnet-ip-address-prefix
     summary: The subnet address prefix in CIDR format.
     description: ''
@@ -103,14 +107,14 @@ children:
     summary: The subnet name.  Creates if creating a new VNet, references if referencing an existing VNet.
     description: ''
   - name: --tags
-    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
+    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   - name: --upgrade-policy-mode
     summary: ''
     description: ''
     defaultValue: manual
     parameterValueGroup:
-    - automatic, manual
+    - Automatic, Manual
   - name: --vm-sku
     summary: Size of VMs in the VM Scale Set.  See <a href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/">https://azure.microsoft.com/en-us/pricing/details/virtual-machines/</a> for size info.
     description: ''
@@ -133,7 +137,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -145,7 +149,8 @@ children:
   description: See <a href="https://azure.microsoft.com/en-us/blog/azure-virtual-machine-scale-sets-ga/">https://azure.microsoft.com/en-us/blog/azure-virtual-machine-scale-sets-ga/</a> for an introduction to scale sets.
   summary: Create an Azure Virtual Machine Scale Set.
   Metadata: {}
-- examples: []
+- htmlId: deallocate
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -156,7 +161,7 @@ children:
     summary: Name of resource group.
     description: ''
   - name: --instance-ids
-    summary: Space separated ids such as "0 2 3", or use "*" for all instances.
+    summary: 'Space separated list of IDs (ex: 1 2 3 ...) or * for all instances.'
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -169,7 +174,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -181,26 +186,9 @@ children:
   description: ''
   summary: Deallocate virtual machines in a scale set.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
     description: ''
@@ -210,16 +198,35 @@ children:
   - name: --resource-group -g
     summary: Name of resource group.
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_vmss_delete
   name: az vmss delete
   description: ''
-  summary: Allows you to delete a virtual machine scale set.
+  summary: Deletes a VM scale set.
   Metadata: {}
-- examples: []
+- htmlId: delete-instances
+  examples: []
   parameters:
   - name: --instance-ids
     isRequired: true
-    summary: Space separated ids such as "0 2 3", or use "*" for all instances.
+    summary: 'Space separated list of IDs (ex: 1 2 3 ...) or * for all instances.'
     description: ''
   - name: --name -n
     isRequired: true
@@ -240,7 +247,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -252,26 +259,9 @@ children:
   description: ''
   summary: Delete virtual machines in a scale set.
   Metadata: {}
-- examples: []
+- htmlId: get-instance-view
+  examples: []
   parameters:
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
   - name: --ids
     summary: One or more scale set or specific VM instance IDs. If provided, no other 'Resource Id' arguments should be specified.
     description: ''
@@ -284,12 +274,31 @@ children:
   - name: --resource-group -g
     summary: Name of resource group.
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_vmss_get-instance-view
   name: az vmss get-instance-view
   description: ''
   summary: Get instance view for a scale set or its VM instances.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --resource-group -g
     summary: Name of resource group.
@@ -305,7 +314,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -317,17 +326,27 @@ children:
   description: ''
   summary: List scale sets.
   Metadata: {}
-- examples: []
+- htmlId: list-instances
+  examples: []
   parameters:
   - name: --expand
-    summary: The expand expression to apply on the operation.
+    summary: The expand expression to apply to the operation.
     description: ''
   - name: --filter
-    summary: The filter to apply on the operation.
+    summary: The filter to apply to the operation.
     description: ''
   - name: --select
     summary: The list parameters.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Scale set name.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -339,47 +358,21 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: Scale set name.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
     description: ''
   uid: az_vmss_list-instances
   name: az vmss list-instances
   description: ''
-  summary: Lists all virtual machines in a VM scale sets.
+  summary: Gets a list of all virtual machines in a VM scale sets.
   Metadata: {}
-- examples: []
+- htmlId: list-skus
+  examples: []
   parameters:
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
     description: ''
@@ -389,16 +382,6 @@ children:
   - name: --resource-group -g
     summary: Name of resource group.
     description: ''
-  uid: az_vmss_list-skus
-  name: az vmss list-skus
-  description: ''
-  summary: >-
-    Displays available skus for your virtual machine scale set including
-
-    the minimum and maximum vm instances allowed for a particular sku.
-  Metadata: {}
-- examples: []
-  parameters:
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -410,13 +393,21 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  uid: az_vmss_list-skus
+  name: az vmss list-skus
+  description: ''
+  summary: Gets a list of SKUs available for your VM scale set, including the minimum and maximum VM instances allowed for each SKU.
+  Metadata: {}
+- htmlId: reimage
+  examples: []
+  parameters:
   - name: --ids
     summary: One or more scale set or specific VM instance IDs. If provided, no other 'Resource Id' arguments should be specified.
     description: ''
@@ -429,12 +420,31 @@ children:
   - name: --resource-group -g
     summary: Name of resource group.
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_vmss_reimage
   name: az vmss reimage
   description: ''
   summary: Reimage virtual machines in a virtual machine scale set.
   Metadata: {}
-- examples: []
+- htmlId: restart
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -445,7 +455,7 @@ children:
     summary: Name of resource group.
     description: ''
   - name: --instance-ids
-    summary: Space separated ids such as "0 2 3", or use "*" for all instances.
+    summary: 'Space separated list of IDs (ex: 1 2 3 ...) or * for all instances.'
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -458,7 +468,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -470,29 +480,12 @@ children:
   description: ''
   summary: Restart virtual machines in a scale set.
   Metadata: {}
-- examples: []
+- htmlId: scale
+  examples: []
   parameters:
   - name: --new-capacity
     isRequired: true
     summary: Number of virtual machines in a scale set.
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
@@ -503,13 +496,6 @@ children:
   - name: --resource-group -g
     summary: Name of resource group.
     description: ''
-  uid: az_vmss_scale
-  name: az vmss scale
-  description: ''
-  summary: Change the number of VMs in an virtual machine scale set.
-  Metadata: {}
-- examples: []
-  parameters:
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -521,13 +507,21 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  uid: az_vmss_scale
+  name: az vmss scale
+  description: ''
+  summary: Change the number of VMs in an virtual machine scale set.
+  Metadata: {}
+- htmlId: show
+  examples: []
+  parameters:
   - name: --ids
     summary: One or more scale set or specific VM instance IDs. If provided, no other 'Resource Id' arguments should be specified.
     description: ''
@@ -540,12 +534,31 @@ children:
   - name: --resource-group -g
     summary: Name of resource group.
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_vmss_show
   name: az vmss show
   description: ''
   summary: Show scale set or its VM instance.
   Metadata: {}
-- examples: []
+- htmlId: start
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -556,7 +569,7 @@ children:
     summary: Name of resource group.
     description: ''
   - name: --instance-ids
-    summary: Space separated ids such as "0 2 3", or use "*" for all instances.
+    summary: 'Space separated list of IDs (ex: 1 2 3 ...) or * for all instances.'
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -569,7 +582,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -581,7 +594,8 @@ children:
   description: ''
   summary: Start virtual machines in a virtual machine scale set.
   Metadata: {}
-- examples: []
+- htmlId: stop
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -592,7 +606,7 @@ children:
     summary: Name of resource group.
     description: ''
   - name: --instance-ids
-    summary: Space separated ids such as "0 2 3", or use "*" for all instances.
+    summary: 'Space separated list of IDs (ex: 1 2 3 ...) or * for all instances.'
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -605,7 +619,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -617,8 +631,18 @@ children:
   description: ''
   summary: Power off (stop) virtual machines in a virtual machine scale set.
   Metadata: {}
-- examples: []
+- htmlId: update
+  examples: []
   parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Scale set name.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
     description: ''
@@ -639,32 +663,24 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: Scale set name.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_vmss_update
   name: az vmss update
   description: ''
   summary: ''
   Metadata: {}
-- examples: []
+- htmlId: update-instances
+  examples: []
   parameters:
   - name: --instance-ids
     isRequired: true
-    summary: Space separated ids such as "0 2 3", or use "*" for all instances.
+    summary: 'Space separated list of IDs (ex: 1 2 3 ...) or * for all instances.'
     description: ''
   - name: --name -n
     isRequired: true
@@ -685,7 +701,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -705,4 +721,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/487f0196fc30715f5cf70b7c781185b5c2a5bf18/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  updated_at: 11/15/2016 10:24:07 PM
+  ms.date: 11/15/2016

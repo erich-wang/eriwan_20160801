@@ -1,6 +1,8 @@
+htmlId: endpoint
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -53,7 +55,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -65,29 +67,12 @@ children:
   description: ''
   summary: Class representing a Traffic Manager endpoint.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --type
     isRequired: true
     summary: 'Endpoint type.  Values include: azureEndpoints, externalEndpoints, nestedEndpoints.'
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
@@ -100,34 +85,35 @@ children:
     description: ''
   - name: --resource-group -g
     summary: Name of resource group.
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   uid: az_network_traffic-manager_endpoint_delete
   name: az network traffic-manager endpoint delete
   description: ''
   summary: Deletes a Traffic Manager endpoint.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --type
     summary: 'Endpoint type.  Values include: azureEndpoints, externalEndpoints, nestedEndpoints.'
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
@@ -138,17 +124,6 @@ children:
   - name: --resource-group -g
     summary: Name of resource group.
     description: ''
-  uid: az_network_traffic-manager_endpoint_list
-  name: az network traffic-manager endpoint list
-  description: ''
-  summary: ''
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --type
-    isRequired: true
-    summary: 'Endpoint type.  Values include: azureEndpoints, externalEndpoints, nestedEndpoints.'
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -160,12 +135,24 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_network_traffic-manager_endpoint_list
+  name: az network traffic-manager endpoint list
+  description: ''
+  summary: ''
+  Metadata: {}
+- htmlId: show
+  examples: []
+  parameters:
+  - name: --type
+    isRequired: true
+    summary: 'Endpoint type.  Values include: azureEndpoints, externalEndpoints, nestedEndpoints.'
     description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
@@ -179,16 +166,47 @@ children:
   - name: --resource-group -g
     summary: Name of resource group.
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_network_traffic-manager_endpoint_show
   name: az network traffic-manager endpoint show
   description: ''
   summary: Gets a Traffic Manager endpoint.
   Metadata: {}
-- examples: []
+- htmlId: update
+  examples: []
   parameters:
   - name: --type
     isRequired: true
     summary: 'Endpoint type.  Values include: azureEndpoints, externalEndpoints, nestedEndpoints.'
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Endpoint name.
+    description: ''
+  - name: --profile-name
+    summary: Name of parent profile.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
@@ -210,24 +228,12 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: Endpoint name.
-    description: ''
-  - name: --profile-name
-    summary: Name of parent profile.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
     description: ''
   uid: az_network_traffic-manager_endpoint_update
   name: az network traffic-manager endpoint update
@@ -242,4 +248,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/3e4d2600fa4af979083b93441662fc49451a435b/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  updated_at: 11/29/2016 12:59:48 AM
+  ms.date: 11/29/2016

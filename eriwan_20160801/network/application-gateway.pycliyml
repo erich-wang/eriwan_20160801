@@ -1,6 +1,8 @@
+htmlId: application-gateway
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -27,6 +29,8 @@ children:
     summary: Enable or disable HTTP settings cookie based affinity.
     description: ''
     defaultValue: disabled
+    parameterValueGroup:
+    - Disabled, Enabled
   - name: --http-settings-port
     summary: The HTTP settings port.
     description: ''
@@ -35,14 +39,16 @@ children:
     summary: The HTTP settings protocol.
     description: ''
     defaultValue: http
+    parameterValueGroup:
+    - Http, Https
   - name: --location -l
     summary: Location.
     description: ''
   - name: --private-ip-address
     summary: Static private IP address to use.
     description: ''
-  - name: --public-ip
-    summary: Name or ID of the resource.  Creates new by default.  Use "" for none.
+  - name: --public-ip-address
+    summary: Name or ID of a public IP address. Uses existing resource or creates new if specified, or none if omitted.
     description: ''
   - name: --public-ip-address-allocation
     summary: Specify the kind of public IP allocation for new public IPs.
@@ -52,6 +58,8 @@ children:
     summary: The request routing rule type.
     description: ''
     defaultValue: Basic
+    parameterValueGroup:
+    - Basic, PathBasedRouting
   - name: --servers
     summary: The list of IP addresses or DNS names corresponding to backend servers.
     description: ''
@@ -59,12 +67,16 @@ children:
     summary: The name of the SKU. (Standard_Small, Standard_Medium, Standard_Large).
     description: ''
     defaultValue: Standard_Medium
+    parameterValueGroup:
+    - Standard_Large, Standard_Medium, Standard_Small
   - name: --sku-tier
     summary: The SKU tier.
     description: ''
     defaultValue: Standard
+    parameterValueGroup:
+    - Standard
   - name: --subnet
-    summary: Name or ID of the resource.  Creates new by default.
+    summary: Name or ID of the subnet. Will create resource if it does not exist. If name specified, also specify --vnet-name.
     description: ''
     defaultValue: default
   - name: --subnet-address-prefix
@@ -72,7 +84,7 @@ children:
     description: ''
     defaultValue: 10.0.0.0/24
   - name: --tags
-    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
+    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   - name: --vnet-address-prefix
     summary: The virtual network address range in CIDR format.
@@ -92,7 +104,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -102,28 +114,11 @@ children:
   uid: az_network_application-gateway_create
   name: az network application-gateway create
   description: ''
-  summary: Create or update a virtual machine.
+  summary: Create a new application gateway.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
     description: ''
@@ -133,15 +128,31 @@ children:
   - name: --resource-group -g
     summary: Name of resource group.
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_network_application-gateway_delete
   name: az network application-gateway delete
   description: ''
-  summary: >-
-    The delete ApplicationGateway operation deletes the specified
-
-    application gateway.
+  summary: Delete an application gateway.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --resource-group -g
     summary: Name of resource group.
@@ -157,7 +168,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -167,10 +178,20 @@ children:
   uid: az_network_application-gateway_list
   name: az network application-gateway list
   description: ''
-  summary: ''
+  summary: List application gateways in a resource group or subscription.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the application gateway.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -182,32 +203,30 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the application gateway.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
     description: ''
   uid: az_network_application-gateway_show
   name: az network application-gateway show
   description: ''
-  summary: >-
-    The Get ApplicationGateway operation retrieves information about the
-
-    specified application gateway.
+  summary: Show details of an application gateway.
   Metadata: {}
-- examples: []
+- htmlId: start
+  examples: []
   parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the application gateway.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -219,32 +238,30 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the application gateway.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
     description: ''
   uid: az_network_application-gateway_start
   name: az network application-gateway start
   description: ''
-  summary: >-
-    The Start ApplicationGateway operation starts application gateway in
-
-    the specified resource group through Network resource provider.
+  summary: Start an application gateway.
   Metadata: {}
-- examples: []
+- htmlId: stop
+  examples: []
   parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the application gateway.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -256,13 +273,21 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  uid: az_network_application-gateway_stop
+  name: az network application-gateway stop
+  description: ''
+  summary: Stop an application gateway.
+  Metadata: {}
+- htmlId: update
+  examples: []
+  parameters:
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
     description: ''
@@ -272,16 +297,6 @@ children:
   - name: --resource-group -g
     summary: Name of resource group.
     description: ''
-  uid: az_network_application-gateway_stop
-  name: az network application-gateway stop
-  description: ''
-  summary: >-
-    The STOP ApplicationGateway operation stops application gateway in the
-
-    specified resource group through Network resource provider.
-  Metadata: {}
-- examples: []
-  parameters:
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
     description: ''
@@ -302,26 +317,17 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the application gateway.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_network_application-gateway_update
   name: az network application-gateway update
   description: ''
-  summary: ''
+  summary: Update an application gateway.
   Metadata: {}
 uid: az_network_application-gateway
 name: az network application-gateway
@@ -331,4 +337,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/3e4d2600fa4af979083b93441662fc49451a435b/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  updated_at: 11/29/2016 12:59:48 AM
+  ms.date: 11/29/2016

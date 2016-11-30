@@ -1,6 +1,8 @@
+htmlId: account
 examples: []
 children:
-- examples: []
+- htmlId: check-name
+  examples: []
   parameters:
   - name: --name
     isRequired: true
@@ -17,7 +19,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -29,7 +31,8 @@ children:
   description: ''
   summary: Checks that account name is valid and is not in use.
   Metadata: {}
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --location -l
     isRequired: true
@@ -45,11 +48,15 @@ children:
     description: ''
   - name: --sku
     isRequired: true
-    summary: The storage account SKU. (Standard_LRS, Standard_GRS, Standard_RAGRS, Standard_ZRS, Premium_LRS).
+    summary: The storage account SKU.
     description: ''
+    parameterValueGroup:
+    - Premium_LRS, Standard_GRS, Standard_LRS, Standard_RAGRS, Standard_ZRS
   - name: --access-tier
-    summary: Required for StandardBlob accounts. The access tier used for billing. Cannot be set for StandardLRS, StandardGRS, StandardRAGRS, or PremiumLRS account types. (Hot, Cool).
+    summary: Required for StandardBlob accounts. The access tier used for billing. Cannot be set for StandardLRS, StandardGRS, StandardRAGRS, or PremiumLRS account types.
     description: ''
+    parameterValueGroup:
+    - Cool, Hot
   - name: --custom-domain
     summary: User domain assigned to the storage account. Name is the CNAME source.
     description: ''
@@ -59,11 +66,13 @@ children:
     parameterValueGroup:
     - blob
   - name: --kind
-    summary: Indicates the type of storage account. (Storage, BlobStorage).
+    summary: Indicates the type of storage account.
     description: ''
     defaultValue: Storage
+    parameterValueGroup:
+    - BlobStorage, Storage
   - name: --tags
-    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
+    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   - name: --use-subdomain
     summary: Specify to enable indirect CNAME validation.
@@ -79,7 +88,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -91,8 +100,18 @@ children:
   description: ''
   summary: Create a storage account.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The storage account name.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -104,28 +123,20 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The storage account name.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_storage_account_delete
   name: az storage account delete
   description: ''
   summary: Deletes a storage account in Microsoft Azure.
   Metadata: {}
-- examples: []
+- htmlId: generate-sas
+  examples: []
   parameters:
   - name: --expiry
     isRequired: true
@@ -152,24 +163,6 @@ children:
   - name: --start
     summary: Specifies the UTC datetime (Y-m-d'T'H:M'Z') at which the SAS becomes valid. Defaults to the time of the request.
     description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
   - name: --account-name
     summary: 'Storage account name. Must be used in conjunction with either storage account key or a SAS token. Environment Variable: AZURE_STORAGE_ACCOUNT.'
     description: ''
@@ -182,12 +175,31 @@ children:
   - name: --connection-string
     summary: 'Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING.'
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_storage_account_generate-sas
   name: az storage account generate-sas
-  description: "Use the returned signature with the sas_token parameter of the service \nor to create a new account object."
+  description: Use the returned signature with the sas_token parameter of the service  or to create a new account object.
   summary: Generates a shared access signature for the account.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --resource-group -g
     summary: Name of resource group.
@@ -203,7 +215,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -215,8 +227,18 @@ children:
   description: ''
   summary: List storage accounts within a subscription or resource group.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The storage account name.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -228,34 +250,20 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The storage account name.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_storage_account_show
   name: az storage account show
-  description: >-
-    The
-
-    ListKeys operation should be used to retrieve storage keys.
-  summary: >-
-    Returns the properties for the specified storage account including but
-
-    not limited to name, account type, location, and account status.
+  description: The ListKeys operation should be used to retrieve storage keys.
+  summary: Returns the properties for the specified storage account including but not limited to name, account type, location, and account status.
   Metadata: {}
-- examples: []
+- htmlId: show-connection-string
+  examples: []
   parameters:
   - name: --blob-endpoint
     summary: Custom endpoint for blobs.
@@ -281,6 +289,15 @@ children:
   - name: --table-endpoint
     summary: Custom endpoint for tables.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The storage account name.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -292,28 +309,20 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The storage account name.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_storage_account_show-connection-string
   name: az storage account show-connection-string
   description: ''
   summary: Generate connection string for a storage account.
   Metadata: {}
-- examples: []
+- htmlId: show-usage
+  examples: []
   parameters:
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -326,7 +335,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -338,11 +347,14 @@ children:
   description: ''
   summary: Show the current count and limit of the storage accounts under the subscription.
   Metadata: {}
-- examples: []
+- htmlId: update
+  examples: []
   parameters:
   - name: --access-tier
-    summary: The access tier used for billing StandardBlob accounts. Cannot be set for StandardLRS, StandardGRS, StandardRAGRS, or PremiumLRS account types. (Hot, Cool).
+    summary: The access tier used for billing StandardBlob accounts. Cannot be set for StandardLRS, StandardGRS, StandardRAGRS, or PremiumLRS account types.
     description: ''
+    parameterValueGroup:
+    - Cool, Hot
   - name: --custom-domain
     summary: User domain assigned to the storage account. Name is the CNAME source. Use "" to clear existing value.
     description: ''
@@ -352,16 +364,27 @@ children:
     parameterValueGroup:
     - blob
   - name: --sku
-    summary: The storage account SKU. (Standard_LRS, Standard_GRS, Standard_RAGRS, Standard_ZRS, Premium_LRS).
+    summary: The storage account SKU.
     description: ''
+    parameterValueGroup:
+    - Premium_LRS, Standard_GRS, Standard_LRS, Standard_RAGRS, Standard_ZRS
   - name: --tags
-    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
+    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   - name: --use-subdomain
     summary: Specify whether to use indirect CNAME validation.
     description: ''
     parameterValueGroup:
-    - true, false
+    - false, true
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The storage account name.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -373,21 +396,12 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The storage account name.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
     description: ''
   uid: az_storage_account_update
   name: az storage account update
@@ -397,9 +411,11 @@ children:
 uid: az_storage_account
 name: az storage account
 description: ''
-summary: Commands to manage your Storage accounts.
+summary: Manage storage accounts.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/13c86b8504a4d4f20c86842860d45f03ae184710/src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
+  updated_at: 11/22/2016 8:05:54 PM
+  ms.date: 11/22/2016

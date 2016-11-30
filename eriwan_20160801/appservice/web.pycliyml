@@ -1,9 +1,20 @@
+htmlId: web
 examples: []
 children:
-- examples: []
+- htmlId: browse
+  examples: []
   parameters:
   - name: --slot
     summary: The name of the slot. Default to the productions slot if not specified.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the web.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -16,116 +27,33 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the web app.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
-  uid: az_webapp_browse
-  name: az webapp browse
+  uid: az_appservice_web_browse
+  name: az appservice web browse
   description: ''
-  summary: ''
+  summary: Open the web app in a browser.
   Metadata: {}
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
     summary: Name of the new webapp.
     description: ''
-  - name: --plan
+  - name: --plan -p
     isRequired: true
-    summary: Name or resource id of the app service plan. Use 'webapp plan create' to get one.
+    summary: Name or resource id of the app service plan. Use 'appservice plan create' to get one.
     description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  uid: az_webapp_create
-  name: az webapp create
-  description: ''
-  summary: ''
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --slot
-    summary: The name of the slot. Default to the productions slot if not specified.
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the web app.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
-  uid: az_webapp_delete
-  name: az webapp delete
-  description: ''
-  summary: ''
-  Metadata: {}
-- examples: []
-  parameters:
   - name: --resource-group -g
     isRequired: true
     summary: Name of resource group.
     description: ''
-  - name: --include-site-types
-    summary: Types of apps included in the response.
-    description: ''
-  - name: --include-slots
-    summary: Whether or not to include deployments slots in results.
-    description: ''
-  - name: --properties-to-include
-    summary: Additional web app properties included in the response.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -137,23 +65,33 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_webapp_list
-  name: az webapp list
+  uid: az_appservice_web_create
+  name: az appservice web create
   description: ''
-  summary: Gets the web apps for a subscription in the specified resource group.
+  summary: Create a web app.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --slot
     summary: The name of the slot. Default to the productions slot if not specified.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the web.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -165,32 +103,63 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the web app.
-    description: ''
+  uid: az_appservice_web_delete
+  name: az appservice web delete
+  description: ''
+  summary: Delete a web app.
+  Metadata: {}
+- htmlId: list
+  examples: []
+  parameters:
   - name: --resource-group -g
+    isRequired: true
     summary: Name of resource group.
     description: ''
-  uid: az_webapp_restart
-  name: az webapp restart
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_appservice_web_list
+  name: az appservice web list
   description: ''
-  summary: ''
+  summary: List web apps.
   Metadata: {}
-- examples: []
+- htmlId: restart
+  examples: []
   parameters:
   - name: --slot
     summary: The name of the slot. Default to the productions slot if not specified.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the web.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -202,66 +171,33 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the web app.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
-  uid: az_webapp_show
-  name: az webapp show
+  uid: az_appservice_web_restart
+  name: az appservice web restart
   description: ''
-  summary: ''
+  summary: Restart a web app.
   Metadata: {}
-- examples: []
-  parameters:
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the web app.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
-  uid: az_webapp_show-publish-profile
-  name: az webapp show-publish-profile
-  description: ''
-  summary: Gets the web app publishing credentials.
-  Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --slot
     summary: The name of the slot. Default to the productions slot if not specified.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the web.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -273,33 +209,64 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  uid: az_appservice_web_show
+  name: az appservice web show
+  description: ''
+  summary: Show a web app.
+  Metadata: {}
+- htmlId: stop
+  examples: []
+  parameters:
+  - name: --slot
+    summary: The name of the slot. Default to the productions slot if not specified.
+    description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
     description: ''
   - name: --name -n
-    summary: The name of the web app.
+    summary: Name of the web.
     description: ''
   - name: --resource-group -g
     summary: Name of resource group.
     description: ''
-  uid: az_webapp_stop
-  name: az webapp stop
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_appservice_web_stop
+  name: az appservice web stop
   description: ''
-  summary: ''
+  summary: Stop a web app.
   Metadata: {}
-uid: az_webapp
-name: az webapp
+uid: az_appservice_web
+name: az appservice web
 description: ''
-summary: Quickly create and deploy mission-critical Web apps at scale.
+summary: ''
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
-  doc_source_url_path: src/command_modules/azure-cli-webapp/azure/cli/command_modules/webapp/_help.py
-  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-webapp/azure/cli/command_modules/webapp/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  doc_source_url_path: src/command_modules/azure-cli-appservice/azure/cli/command_modules/appservice/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-appservice/azure/cli/command_modules/appservice/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/blob/487f0196fc30715f5cf70b7c781185b5c2a5bf18/src/command_modules/azure-cli-appservice/azure/cli/command_modules/appservice/_help.py
+  updated_at: 11/15/2016 10:24:07 PM
+  ms.date: 11/15/2016

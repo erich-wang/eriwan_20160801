@@ -1,6 +1,8 @@
+htmlId: address-pool
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -25,7 +27,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -35,9 +37,10 @@ children:
   uid: az_network_lb_address-pool_create
   name: az network lb address-pool create
   description: ''
-  summary: ''
+  summary: Create a new load balancer backend address pool.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -62,7 +65,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -72,9 +75,10 @@ children:
   uid: az_network_lb_address-pool_delete
   name: az network lb address-pool delete
   description: ''
-  summary: ''
+  summary: Delete a load balancer backend address pool.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -95,7 +99,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -105,9 +109,10 @@ children:
   uid: az_network_lb_address-pool_list
   name: az network lb address-pool list
   description: ''
-  summary: ''
+  summary: List backend address pools in a load balancer.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -132,7 +137,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -142,14 +147,16 @@ children:
   uid: az_network_lb_address-pool_show
   name: az network lb address-pool show
   description: ''
-  summary: ''
+  summary: Show details of a load balancer backend address pool.
   Metadata: {}
 uid: az_network_lb_address-pool
 name: az network lb address-pool
 description: ''
-summary: Manage LB address pools.
+summary: Manage load balancer backend address pools.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/3e4d2600fa4af979083b93441662fc49451a435b/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  updated_at: 11/29/2016 12:59:48 AM
+  ms.date: 11/29/2016

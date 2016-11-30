@@ -1,6 +1,8 @@
+htmlId: availability-set
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -22,7 +24,7 @@ children:
     description: ''
     defaultValue: 5
   - name: --tags
-    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
+    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -35,7 +37,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -47,7 +49,8 @@ children:
   description: For more info, see <a href="https://blogs.technet.microsoft.com/yungchou/2013/05/14/window-azure-fault-domain-and-upgrade-domain-explained-explained-reprised/">https://blogs.technet.microsoft.com/yungchou/2013/05/14/window-azure-fault-domain-and-upgrade-domain-explained-explained-reprised/</a>.
   summary: Create or update a virtual machine.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -68,7 +71,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -78,9 +81,10 @@ children:
   uid: az_vm_availability-set_delete
   name: az vm availability-set delete
   description: ''
-  summary: The operation to delete the availability set.
+  summary: Delete an availability set.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --resource-group -g
     isRequired: true
@@ -97,7 +101,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -107,9 +111,10 @@ children:
   uid: az_vm_availability-set_list
   name: az vm availability-set list
   description: ''
-  summary: The operation to list the availability sets.
+  summary: Lists all availability sets in a resource group.
   Metadata: {}
-- examples: []
+- htmlId: list-sizes
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -130,7 +135,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -140,12 +145,10 @@ children:
   uid: az_vm_availability-set_list-sizes
   name: az vm availability-set list-sizes
   description: ''
-  summary: >-
-    Lists all available virtual machine sizes that can be used to create a
-
-    new virtual machine in an existing availability set.
+  summary: Lists all available virtual machine sizes that can be used to create a new virtual machine in an existing availability set.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -166,7 +169,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -176,9 +179,10 @@ children:
   uid: az_vm_availability-set_show
   name: az vm availability-set show
   description: ''
-  summary: The operation to get the availability set.
+  summary: Retrieves information about an availability set.
   Metadata: {}
-- examples: []
+- htmlId: update
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -208,7 +212,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -228,4 +232,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/487f0196fc30715f5cf70b7c781185b5c2a5bf18/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  updated_at: 11/15/2016 10:24:07 PM
+  ms.date: 11/15/2016

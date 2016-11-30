@@ -1,6 +1,8 @@
+htmlId: entity
 examples: []
 children:
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --partition-key
     isRequired: true
@@ -16,24 +18,6 @@ children:
     description: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   - name: --if-match
     summary: The client may specify the ETag for the entity on the request in order to compare to the ETag maintained by the service for the purpose of optimistic concurrency. The delete operation will be performed only if the ETag sent by the client matches the value maintained by the server, indicating that the entity has not been modified since it was retrieved by the client. To force an unconditional delete, set If-Match to the wildcard character (*).
@@ -51,12 +35,31 @@ children:
   - name: --sas-token
     summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_storage_entity_delete
   name: az storage entity delete
-  description: "Throws if the entity does not exist.\n\nWhen an entity is successfully deleted, the entity is immediately marked \nfor deletion and is no longer accessible to clients. The entity is later \nremoved from the Table service during garbage collection."
+  description: Throws if the entity does not exist.  When an entity is successfully deleted, the entity is immediately marked  for deletion and is no longer accessible to clients. The entity is later  removed from the Table service during garbage collection.
   summary: Deletes an existing entity in a table.
   Metadata: {}
-- examples: []
+- htmlId: insert
+  examples: []
   parameters:
   - name: --entity -e
     isRequired: true
@@ -75,24 +78,6 @@ children:
   - name: --timeout
     summary: The server timeout, expressed in seconds.
     description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
   - name: --account-key
     summary: 'Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY.'
     description: ''
@@ -105,24 +90,6 @@ children:
   - name: --sas-token
     summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
-  uid: az_storage_entity_insert
-  name: az storage entity insert
-  description: Inserts a new entity into the table. When inserting an entity into a table, you must specify values for the PartitionKey and RowKey system properties. Together, these properties form the primary key and must be unique within the table. Both the PartitionKey and RowKey values may be up to 64 KB in size. If you are using an integer value as a key, you should convert the integer to a fixed-width string, because they are canonically sorted. For example, you should convert the value 1 to 0000001 to ensure proper sorting.
-  summary: Insert a new entity into the table.
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --entity -e
-    isRequired: true
-    summary: The entity to merge. Could be a dict or an entity object. Must contain a PartitionKey and a RowKey.
-    description: ''
-  - name: --table-name -t
-    isRequired: true
-    summary: The name of the table containing the entity to merge.
-    description: ''
-  - name: --timeout
-    summary: Request timeout in seconds. Applies to each call to the service.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -134,12 +101,31 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_storage_entity_insert
+  name: az storage entity insert
+  description: Inserts a new entity into the table. When inserting an entity into a table, you must specify values for the PartitionKey and RowKey system properties. Together, these properties form the primary key and must be unique within the table. Both the PartitionKey and RowKey values may be up to 64 KB in size. If you are using an integer value as a key, you should convert the integer to a fixed-width string, because they are canonically sorted. For example, you should convert the value 1 to 0000001 to ensure proper sorting.
+  summary: Insert a new entity into the table.
+  Metadata: {}
+- htmlId: merge
+  examples: []
+  parameters:
+  - name: --entity -e
+    isRequired: true
+    summary: The entity to merge. Could be a dict or an entity object. Must contain a PartitionKey and a RowKey.
+    description: ''
+  - name: --table-name -t
+    isRequired: true
+    summary: The name of the table containing the entity to merge.
+    description: ''
+  - name: --timeout
+    summary: Request timeout in seconds. Applies to each call to the service.
     description: ''
   - name: --if-match
     summary: The client may specify the ETag for the entity on the request in order to compare to the ETag maintained by the service for the purpose of optimistic concurrency. The merge operation will be performed only if the ETag sent by the client matches the value maintained by the server, indicating that the entity has not been modified since it was retrieved by the client. To force an unconditional merge, set If-Match to the wildcard character (*).
@@ -157,12 +143,31 @@ children:
   - name: --sas-token
     summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_storage_entity_merge
   name: az storage entity merge
-  description: "Throws \nif the entity does not exist. \n\nThis operation does not replace the existing entity as the update_entity\noperation does. A property cannot be removed with merge_entity.\n\nAny properties with null values are ignored. All other properties will be \nupdated or added."
+  description: Throws  if the entity does not exist.   This operation does not replace the existing entity as the update_entity operation does. A property cannot be removed with merge_entity.  Any properties with null values are ignored. All other properties will be  updated or added.
   summary: Updates an existing entity by merging the entity's properties.
   Metadata: {}
-- examples: []
+- htmlId: query
+  examples: []
   parameters:
   - name: --table-name -t
     isRequired: true
@@ -173,7 +178,7 @@ children:
     description: ''
     defaultValue: minimal
     parameterValueGroup:
-    - full, none, minimal
+    - full, minimal, none
   - name: --filter
     summary: Returns only entities that satisfy the specified filter. Note that no more than 15 discrete comparisons are permitted within a $filter string. See <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd894031.aspx">http://msdn.microsoft.com/en-us/library/windowsazure/dd894031.aspx</a> for more information on constructing filters.
     description: ''
@@ -189,24 +194,6 @@ children:
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
     description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
   - name: --account-key
     summary: 'Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY.'
     description: ''
@@ -219,24 +206,6 @@ children:
   - name: --sas-token
     summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
-  uid: az_storage_entity_query
-  name: az storage entity query
-  description: "The \ngenerator will lazily follow the continuation tokens returned by the \nservice and stop when all entities have been returned or max_results is \nreached.\n\nIf max_results is specified and the account has more than that number of \nentities, the generator will have a populated next_marker field once it \nfinishes. This marker can be used to create a new generator if more \nresults are desired."
-  summary: Returns a generator to list the entities in the table specified.
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --entity -e
-    isRequired: true
-    summary: The entity to update. Could be a dict or an entity object. Must contain a PartitionKey and a RowKey.
-    description: ''
-  - name: --table-name -t
-    isRequired: true
-    summary: The name of the table containing the entity to update.
-    description: ''
-  - name: --timeout
-    summary: Request timeout in seconds. Applies to each call to the service.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -248,12 +217,31 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_storage_entity_query
+  name: az storage entity query
+  description: ''
+  summary: List entities which satisfy a given query.
+  Metadata: {}
+- htmlId: replace
+  examples: []
+  parameters:
+  - name: --entity -e
+    isRequired: true
+    summary: The entity to update. Could be a dict or an entity object. Must contain a PartitionKey and a RowKey.
+    description: ''
+  - name: --table-name -t
+    isRequired: true
+    summary: The name of the table containing the entity to update.
+    description: ''
+  - name: --timeout
+    summary: Request timeout in seconds. Applies to each call to the service.
     description: ''
   - name: --if-match
     summary: The client may specify the ETag for the entity on the request in order to compare to the ETag maintained by the service for the purpose of optimistic concurrency. The update operation will be performed only if the ETag sent by the client matches the value maintained by the server, indicating that the entity has not been modified since it was retrieved by the client. To force an unconditional update, set If-Match to the wildcard character (*).
@@ -271,12 +259,31 @@ children:
   - name: --sas-token
     summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_storage_entity_replace
   name: az storage entity replace
-  description: "Throws if the entity does not exist. \nThe update_entity operation replaces the entire entity and can be used to \nremove properties."
+  description: Throws if the entity does not exist.  The update_entity operation replaces the entire entity and can be used to  remove properties.
   summary: Updates an existing entity in a table.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --partition-key
     isRequired: true
@@ -300,24 +307,6 @@ children:
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
     description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
   - name: --account-key
     summary: 'Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY.'
     description: ''
@@ -330,6 +319,24 @@ children:
   - name: --sas-token
     summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_storage_entity_show
   name: az storage entity show
   description: Throws if the entity does not exist.
@@ -338,9 +345,11 @@ children:
 uid: az_storage_entity
 name: az storage entity
 description: ''
-summary: Commands to manage Storage table entities.
+summary: Manage table storage entities.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/13c86b8504a4d4f20c86842860d45f03ae184710/src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
+  updated_at: 11/22/2016 8:05:54 PM
+  ms.date: 11/22/2016

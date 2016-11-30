@@ -1,6 +1,8 @@
+htmlId: lease
 examples: []
 children:
-- examples: []
+- htmlId: acquire
+  examples: []
   parameters:
   - name: --container-name -c
     isRequired: true
@@ -16,24 +18,6 @@ children:
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
     description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
   - name: --if-modified-since
     summary: Alter only if modified since supplied UTC datetime (Y-m-d'T'H:M'Z').
     description: ''
@@ -52,17 +36,31 @@ children:
   - name: --sas-token
     summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_storage_container_lease_acquire
   name: az storage container lease acquire
-  description: >-
-    If the container does not have an active lease,
-
-    the Blob service creates a lease on the container and returns a new
-
-    lease ID.
+  description: If the container does not have an active lease, the Blob service creates a lease on the container and returns a new lease ID.
   summary: Requests a new lease.
   Metadata: {}
-- examples: []
+- htmlId: break
+  examples: []
   parameters:
   - name: --container-name -c
     isRequired: true
@@ -74,24 +72,6 @@ children:
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
     description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
   - name: --if-modified-since
     summary: Alter only if modified since supplied UTC datetime (Y-m-d'T'H:M'Z').
     description: ''
@@ -110,25 +90,31 @@ children:
   - name: --sas-token
     summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_storage_container_lease_break
   name: az storage container lease break
-  description: >-
-    Once a lease is
-
-    broken, it cannot be renewed. Any authorized request can break the lease;
-
-    the request is not required to specify a matching lease ID. When a lease
-
-    is broken, the lease break period is allowed to elapse, during which time
-
-    no lease operation except break and release can be performed on the container.
-
-    When a lease is successfully broken, the response indicates the interval
-
-    in seconds until a new lease can be acquired.
+  description: Once a lease is broken, it cannot be renewed. Any authorized request can break the lease; the request is not required to specify a matching lease ID. When a lease is broken, the lease break period is allowed to elapse, during which time no lease operation except break and release can be performed on the container. When a lease is successfully broken, the response indicates the interval in seconds until a new lease can be acquired.
   summary: Break the lease, if the container has an active lease.
   Metadata: {}
-- examples: []
+- htmlId: change
+  examples: []
   parameters:
   - name: --container-name -c
     isRequired: true
@@ -145,24 +131,6 @@ children:
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
     description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
   - name: --if-modified-since
     summary: Alter only if modified since supplied UTC datetime (Y-m-d'T'H:M'Z').
     description: ''
@@ -180,16 +148,32 @@ children:
     description: ''
   - name: --sas-token
     summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   uid: az_storage_container_lease_change
   name: az storage container lease change
-  description: >-
-    A change must include the current
-
-    lease ID and a new lease ID.
+  description: A change must include the current lease ID and a new lease ID.
   summary: Change the lease ID of an active lease.
   Metadata: {}
-- examples: []
+- htmlId: release
+  examples: []
   parameters:
   - name: --container-name -c
     isRequired: true
@@ -201,24 +185,6 @@ children:
     description: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   - name: --if-modified-since
     summary: Alter only if modified since supplied UTC datetime (Y-m-d'T'H:M'Z').
@@ -237,18 +203,32 @@ children:
     description: ''
   - name: --sas-token
     summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   uid: az_storage_container_lease_release
   name: az storage container lease release
-  description: >-
-    The lease may be released if the lease_id specified matches
-
-    that associated with the container. Releasing the lease allows another client
-
-    to immediately acquire the lease for the container as soon as the release is complete.
+  description: The lease may be released if the lease_id specified matches that associated with the container. Releasing the lease allows another client to immediately acquire the lease for the container as soon as the release is complete.
   summary: Release the lease.
   Metadata: {}
-- examples: []
+- htmlId: renew
+  examples: []
   parameters:
   - name: --container-name -c
     isRequired: true
@@ -260,24 +240,6 @@ children:
     description: ''
   - name: --timeout
     summary: Request timeout in seconds. Applies to each call to the service.
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   - name: --if-modified-since
     summary: Alter only if modified since supplied UTC datetime (Y-m-d'T'H:M'Z').
@@ -297,26 +259,37 @@ children:
   - name: --sas-token
     summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
     description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
   uid: az_storage_container_lease_renew
   name: az storage container lease renew
-  description: >-
-    The lease can be renewed if the lease ID specified
-
-    matches that associated with the container. Note that
-
-    the lease may be renewed even if it has expired as long as the container
-
-    has not been leased again since the expiration of that lease. When you
-
-    renew a lease, the lease duration clock resets.
+  description: The lease can be renewed if the lease ID specified matches that associated with the container. Note that the lease may be renewed even if it has expired as long as the container has not been leased again since the expiration of that lease. When you renew a lease, the lease duration clock resets.
   summary: Renews the lease.
   Metadata: {}
 uid: az_storage_container_lease
 name: az storage container lease
 description: ''
-summary: Commands to manage leases of your storage containers.
+summary: Manage blob storage container leases.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/13c86b8504a4d4f20c86842860d45f03ae184710/src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
+  updated_at: 11/22/2016 8:05:54 PM
+  ms.date: 11/22/2016

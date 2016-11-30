@@ -1,6 +1,8 @@
+htmlId: zone
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -10,8 +12,11 @@ children:
     isRequired: true
     summary: Name of resource group.
     description: ''
+  - name: --if-none-match
+    summary: Create only if there isn't an existing DNS zone matches the given one.
+    description: ''
   - name: --tags
-    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
+    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -24,7 +29,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -34,9 +39,10 @@ children:
   uid: az_network_dns_zone_create
   name: az network dns zone create
   description: ''
-  summary: Create or update a virtual machine.
+  summary: Creates or updates DNS zone properties. Does not modify DNS records within the zone.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -63,7 +69,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -73,9 +79,10 @@ children:
   uid: az_network_dns_zone_delete
   name: az network dns zone delete
   description: ''
-  summary: Removes a DNS zone from a resource group.
+  summary: Deletes a DNS zone. WARNING All DNS records in the zone will also be deleted. This operation cannot be undone.
   Metadata: {}
-- examples: []
+- htmlId: export
+  examples: []
   parameters:
   - name: --file-name
     isRequired: true
@@ -100,7 +107,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -110,9 +117,10 @@ children:
   uid: az_network_dns_zone_export
   name: az network dns zone export
   description: ''
-  summary: ''
+  summary: Export a DNS zone as a DNS zone file.
   Metadata: {}
-- examples: []
+- htmlId: import
+  examples: []
   parameters:
   - name: --file-name
     isRequired: true
@@ -137,7 +145,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -147,9 +155,10 @@ children:
   uid: az_network_dns_zone_import
   name: az network dns zone import
   description: ''
-  summary: ''
+  summary: Export a DNS zone as a DNS zone file.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --resource-group -g
     summary: Name of resource group.
@@ -165,7 +174,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -175,9 +184,10 @@ children:
   uid: az_network_dns_zone_list
   name: az network dns zone list
   description: ''
-  summary: ''
+  summary: List DNS zones in a resource group or subscription.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -198,7 +208,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -208,9 +218,10 @@ children:
   uid: az_network_dns_zone_show
   name: az network dns zone show
   description: ''
-  summary: Gets a DNS zone.
+  summary: Gets DNS zone parameters. Does not show DNS records within the zone.
   Metadata: {}
-- examples: []
+- htmlId: update
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -221,10 +232,7 @@ children:
     summary: Name of resource group.
     description: ''
   - name: --if-match
-    summary: The etag of Zone.
-    description: ''
-  - name: --if-none-match
-    summary: Defines the If-None-Match condition. Set to '*' to force Create-If-Not-Exist. Other values will be ignored.
+    summary: Update only if the resource with the same ETAG exists.
     description: ''
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
@@ -246,7 +254,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -256,7 +264,7 @@ children:
   uid: az_network_dns_zone_update
   name: az network dns zone update
   description: ''
-  summary: ''
+  summary: Updates DNS zone properties. Does not modify DNS records within the zone.
   Metadata: {}
 uid: az_network_dns_zone
 name: az network dns zone
@@ -266,4 +274,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/3e4d2600fa4af979083b93441662fc49451a435b/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  updated_at: 11/29/2016 12:59:48 AM
+  ms.date: 11/29/2016

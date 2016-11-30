@@ -1,6 +1,8 @@
+htmlId: redis
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --location -l
     isRequired: true
@@ -25,13 +27,13 @@ children:
     summary: ''
     description: ''
     parameterValueGroup:
-    - c, p
+    - C, P
   - name: --sku-name
     isRequired: true
     summary: ''
     description: ''
     parameterValueGroup:
-    - basic, standard, premium
+    - Basic, Premium, Standard
   - name: --enable-non-ssl-port
     summary: If the value is true, then the non-ssl redis server port (6379) will be enabled.
     description: ''
@@ -64,7 +66,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -76,8 +78,18 @@ children:
   description: ''
   summary: Create new Redis Cache instance.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the redis cache.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -89,28 +101,20 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: Name of the redis cache.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_redis_delete
   name: az redis delete
   description: This operation takes a while to complete.
   summary: Deletes a redis cache.
   Metadata: {}
-- examples: []
+- htmlId: export
+  examples: []
   parameters:
   - name: --container
     isRequired: true
@@ -123,6 +127,15 @@ children:
   - name: --file-format
     summary: ''
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the redis cache.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -134,35 +147,38 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: Name of the redis cache.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
     description: ''
   uid: az_redis_export
   name: az redis export
   description: ''
   summary: ''
   Metadata: {}
-- examples: []
+- htmlId: force-reboot
+  examples: []
   parameters:
   - name: --reboot-type
     isRequired: true
     summary: Which redis node(s) to reboot. Depending on this value data loss is possible.
     description: ''
+    parameterValueGroup:
+    - AllNodes, PrimaryNode, SecondaryNode
   - name: --shard-id
     summary: In case of cluster cache, this specifies shard id which should be rebooted.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the redis cache.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -175,31 +191,20 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: Name of the redis cache.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_redis_force-reboot
   name: az redis force-reboot
-  description: >-
-    This operation requires write
-
-    permission to the cache resource. There can be potential data loss.
+  description: This operation requires write permission to the cache resource. There can be potential data loss.
   summary: Reboot specified redis node(s).
   Metadata: {}
-- examples: []
+- htmlId: import-method
+  examples: []
   parameters:
   - name: --file-format
     isRequired: true
@@ -209,6 +214,15 @@ children:
     isRequired: true
     summary: ''
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the redis cache.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -220,28 +234,20 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: Name of the redis cache.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_redis_import-method
   name: az redis import-method
   description: ''
   summary: ''
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --resource-group -g
     isRequired: true
@@ -258,7 +264,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -270,7 +276,8 @@ children:
   description: ''
   summary: Gets all redis caches in a resource group.
   Metadata: {}
-- examples: []
+- htmlId: list-all
+  examples: []
   parameters:
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -283,7 +290,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -295,8 +302,18 @@ children:
   description: ''
   summary: Gets all redis caches in the specified subscription.
   Metadata: {}
-- examples: []
+- htmlId: list-keys
+  examples: []
   parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the redis cache.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -308,31 +325,20 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: Name of the redis cache.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_redis_list-keys
   name: az redis list-keys
-  description: >-
-    This operation requires write
-
-    permission to the cache resource.
+  description: This operation requires write permission to the cache resource.
   summary: Retrieve a redis cache's access keys.
   Metadata: {}
-- examples: []
+- htmlId: regenerate-keys
+  examples: []
   parameters:
   - name: --key-type
     isRequired: true
@@ -340,6 +346,15 @@ children:
     description: ''
     parameterValueGroup:
     - Primary, Secondary
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the redis cache.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -351,32 +366,30 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: Name of the redis cache.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
     description: ''
   uid: az_redis_regenerate-keys
   name: az redis regenerate-keys
-  description: >-
-    This operation requires write
-
-    permission to the cache resource.
+  description: This operation requires write permission to the cache resource.
   summary: Regenerate redis cache's access keys.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the redis cache.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -388,32 +401,33 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: Name of the redis cache.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
     description: ''
   uid: az_redis_show
   name: az redis show
   description: ''
   summary: Gets a redis cache (resource description).
   Metadata: {}
-- examples: []
+- htmlId: update-settings
+  examples: []
   parameters:
   - name: --redis-configuration
     isRequired: true
     summary: ''
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the redis cache.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -426,21 +440,12 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: Name of the redis cache.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
     description: ''
   uid: az_redis_update-settings
   name: az redis update-settings
@@ -455,4 +460,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-redis/azure/cli/command_modules/redis/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-redis/azure/cli/command_modules/redis/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/487f0196fc30715f5cf70b7c781185b5c2a5bf18/src/command_modules/azure-cli-redis/azure/cli/command_modules/redis/_help.py
+  updated_at: 11/15/2016 10:24:07 PM
+  ms.date: 11/15/2016

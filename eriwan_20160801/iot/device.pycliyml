@@ -1,17 +1,84 @@
+htmlId: device
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples:
+  - title: Create a device authenticating with symmetric key.
+    code: az iot device create --hub-name my-iot-hub --device-id my-device
+  - title: Create a device authenticating with existing X.509 certificate.
+    code: az iot device create --hub-name my-iot-hub --device-id my-device --x509 --primary-thumbprint X.509_certificate_thumbprint
+  - title: Create a device authenticating with self-signed X.509 certificate, which will be generated and output to current directory.
+    code: az iot device create --hub-name my-iot-hub --device-id my-device --x509
+  - title: Create a device authenticating with self-signed X.509 certificate, which will be valid for 100 days.
+    code: az iot device create --hub-name my-iot-hub --device-id my-device --x509 --valid-days 100
+  - title: Create a device authenticating with self-signed X.509 certificate, which will be generated and output to specified directory.
+    code: az iot device create --hub-name my-iot-hub --device-id my-device --x509 --output-dir /path/to/output
   parameters:
   - name: --device-id -d
     isRequired: true
     summary: Device Id.
     description: ''
-  - name: --hub
+  - name: --hub-name
     isRequired: true
-    summary: Target IoT Hub name.
+    summary: IoT Hub name.
     description: ''
   - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
+  - name: --output-dir
+    summary: Output directory for generated self-signed X.509 certificate. Default is current working directory.
+    description: ''
+  - name: --primary-thumbprint
+    summary: Primary X.509 certificate thumbprint to authenticate device.
+    description: ''
+  - name: --secondary-thumbprint
+    summary: Secondary X.509 certificate thumbprint to authenticate device.
+    description: ''
+  - name: --valid-days
+    summary: Number of days the generated self-signed X.509 certificate should be valid for.Default validity is 365 days.
+    description: ''
+  - name: --x509
+    summary: Use X.509 certificate for device authentication.
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_iot_device_create
+  name: az iot device create
+  description: ''
+  summary: Register a device in an IoT Hub.
+  Metadata: {}
+- htmlId: delete
+  examples: []
+  parameters:
+  - name: --device-id -d
     isRequired: true
+    summary: Device Id.
+    description: ''
+  - name: --hub-name
+    isRequired: true
+    summary: IoT Hub name.
+    description: ''
+  - name: --etag
+    summary: ETag of the target device. It is used for the purpose of optimistic concurrency. Delete operation will be performed only if the specified ETag matches the value maintained by the server, indicating that the device identity has not been modified since it was retrieved. Default value is set to wildcard character (*) to force an unconditional delete.
+    description: ''
+    defaultValue: ''
+  - name: --resource-group -g
     summary: Name of resource group.
     description: ''
   - name: --debug
@@ -25,24 +92,146 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_iot_device_create
-  name: az iot device create
+  uid: az_iot_device_delete
+  name: az iot device delete
   description: ''
-  summary: Register a device in your Azure IoT Hub.
+  summary: Delete a device from an IoT Hub.
+  Metadata: {}
+- htmlId: list
+  examples: []
+  parameters:
+  - name: --hub-name
+    isRequired: true
+    summary: IoT Hub name.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
+  - name: --top
+    summary: Maximum number of device identities to return.
+    description: ''
+    defaultValue: 20
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_iot_device_list
+  name: az iot device list
+  description: ''
+  summary: List devices in an IoT Hub.
+  Metadata: {}
+- htmlId: show
+  examples: []
+  parameters:
+  - name: --device-id -d
+    isRequired: true
+    summary: Device Id.
+    description: ''
+  - name: --hub-name
+    isRequired: true
+    summary: IoT Hub name.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_iot_device_show
+  name: az iot device show
+  description: ''
+  summary: Show metadata of a device in an IoT Hub.
+  Metadata: {}
+- htmlId: show-connection-string
+  examples: []
+  parameters:
+  - name: --hub-name
+    isRequired: true
+    summary: IoT Hub name.
+    description: ''
+  - name: --device-id -d
+    summary: Device Id.
+    description: ''
+  - name: --key
+    summary: The key to use.
+    description: ''
+    defaultValue: primary
+    parameterValueGroup:
+    - primary, secondary
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
+  - name: --top
+    summary: Maximum number of connection strings to return.
+    description: ''
+    defaultValue: 20
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_iot_device_show-connection-string
+  name: az iot device show-connection-string
+  description: If device id is not provided, connection strings for all devices in your IoT Hub will be returned. Otherwise, connection string of target device will be returned.
+  summary: Show connection string of device(s) in an IoT Hub.
   Metadata: {}
 uid: az_iot_device
 name: az iot device
 description: ''
-summary: ''
+summary: Manage devices attached to an IoT Hub.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-iot/azure/cli/command_modules/iot/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-iot/azure/cli/command_modules/iot/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/119d95b3fb6b68782d11fb8e7934b568cdc1a24a/src/command_modules/azure-cli-iot/azure/cli/command_modules/iot/_help.py
+  updated_at: 11/18/2016 4:37:16 PM
+  ms.date: 11/18/2016

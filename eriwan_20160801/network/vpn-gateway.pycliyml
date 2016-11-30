@@ -1,14 +1,12 @@
+htmlId: vpn-gateway
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
     summary: Gateway name.
-    description: ''
-  - name: --public-ip-address
-    isRequired: true
-    summary: Name or ID of the resource.  Uses existing resource.
     description: ''
   - name: --resource-group -g
     isRequired: true
@@ -26,25 +24,28 @@ children:
     description: ''
     defaultValue: Vpn
     parameterValueGroup:
-    - Vpn, ExpressRoute
+    - ExpressRoute, Vpn
   - name: --location -l
     summary: Location.
+    description: ''
+  - name: --public-ip-address
+    summary: Name or ID of an existing public IP address.
     description: ''
   - name: --sku
     summary: ''
     description: ''
     defaultValue: Basic
     parameterValueGroup:
-    - Basic, Standard, HighPerformance
+    - Basic, HighPerformance, Standard
   - name: --tags
-    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
+    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   - name: --vpn-type
     summary: ''
     description: ''
     defaultValue: RouteBased
     parameterValueGroup:
-    - RouteBased, PolicyBased
+    - PolicyBased, RouteBased
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -56,7 +57,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -66,10 +67,20 @@ children:
   uid: az_network_vpn-gateway_create
   name: az network vpn-gateway create
   description: ''
-  summary: Create or update a virtual machine.
+  summary: Create a VPN gateway.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual network gateway.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -81,31 +92,20 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the virtual network gateway.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_network_vpn-gateway_delete
   name: az network vpn-gateway delete
   description: ''
-  summary: >-
-    The Delete VirtualNetworkGateway operation deletes the specified
-
-    virtual network Gateway through Network resource provider.
+  summary: Delete a VPN gateway.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --resource-group -g
     isRequired: true
@@ -122,7 +122,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -132,17 +132,24 @@ children:
   uid: az_network_vpn-gateway_list
   name: az network vpn-gateway list
   description: ''
-  summary: >-
-    The List VirtualNetworkGateways operation retrieves all the virtual
-
-    network gateways stored.
+  summary: List VPN gateways in a resource group or subscription.
   Metadata: {}
-- examples: []
+- htmlId: reset
+  examples: []
   parameters:
   - name: --parameters
     isRequired: true
     summary: Parameters supplied to the Begin Reset Virtual Network Gateway operation through Network resource provider.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual network gateway.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -154,34 +161,30 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the virtual network gateway.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
     description: ''
   uid: az_network_vpn-gateway_reset
   name: az network vpn-gateway reset
   description: ''
-  summary: >-
-    The Reset VirtualNetworkGateway operation resets the primary of the
-
-    virtual network gateway in the specified resource group through
-
-    Network resource provider.
+  summary: Reset a VPN gateway.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: The name of the virtual network gateway.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -193,12 +196,23 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_network_vpn-gateway_show
+  name: az network vpn-gateway show
+  description: ''
+  summary: Show details of a VPN gateway.
+  Metadata: {}
+- htmlId: update
+  examples: []
+  parameters:
+  - name: --address-prefixes
+    summary: List of address prefixes for the VPN gateway.  Prerequisite for uploading certificates.
     description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
@@ -208,21 +222,6 @@ children:
     description: ''
   - name: --resource-group -g
     summary: Name of resource group.
-    description: ''
-  uid: az_network_vpn-gateway_show
-  name: az network vpn-gateway show
-  description: ''
-  summary: >-
-    The Get VirtualNetworkGateway operation retrieves information about
-
-    the specified virtual network gateway through Network resource
-
-    provider.
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --address-prefixes
-    summary: List of address prefixes for the VPN gateway.  Prerequisite for uploading certificates.
     description: ''
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
@@ -244,26 +243,17 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the virtual network gateway.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_network_vpn-gateway_update
   name: az network vpn-gateway update
   description: ''
-  summary: ''
+  summary: Update a VPN gateway.
   Metadata: {}
 uid: az_network_vpn-gateway
 name: az network vpn-gateway
@@ -273,4 +263,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/3e4d2600fa4af979083b93441662fc49451a435b/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  updated_at: 11/29/2016 12:59:48 AM
+  ms.date: 11/29/2016

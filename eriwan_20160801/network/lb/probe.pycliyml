@@ -1,6 +1,8 @@
+htmlId: probe
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -19,7 +21,7 @@ children:
     summary: The protocol to probe.
     description: ''
     parameterValueGroup:
-    - http, tcp
+    - Http, Tcp
   - name: --resource-group -g
     isRequired: true
     summary: Name of resource group.
@@ -44,7 +46,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -54,9 +56,10 @@ children:
   uid: az_network_lb_probe_create
   name: az network lb probe create
   description: ''
-  summary: ''
+  summary: Create a new load balancer probe.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -81,7 +84,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -91,9 +94,10 @@ children:
   uid: az_network_lb_probe_delete
   name: az network lb probe delete
   description: ''
-  summary: ''
+  summary: Delete a load balancer probe.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -114,7 +118,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -124,9 +128,10 @@ children:
   uid: az_network_lb_probe_list
   name: az network lb probe list
   description: ''
-  summary: ''
+  summary: List probes in a load balancer.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -151,7 +156,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -161,9 +166,10 @@ children:
   uid: az_network_lb_probe_show
   name: az network lb probe show
   description: ''
-  summary: ''
+  summary: Show details of a load balancer probe.
   Metadata: {}
-- examples: []
+- htmlId: update
+  examples: []
   parameters:
   - name: --interval
     summary: Probing time interval in seconds.
@@ -178,9 +184,21 @@ children:
     summary: The protocol to probe.
     description: ''
     parameterValueGroup:
-    - http, tcp
+    - Http, Tcp
   - name: --threshold
     summary: The number of consecutive probe failures before an instance is deemed unhealthy.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --lb-name
+    summary: The load balancer name.
+    description: ''
+  - name: --name -n
+    summary: The name of the probe.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
@@ -202,29 +220,17 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --lb-name
-    summary: The load balancer name.
-    description: ''
-  - name: --name -n
-    summary: The name of the probe.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_network_lb_probe_update
   name: az network lb probe update
   description: ''
-  summary: ''
+  summary: Update a load balancer probe.
   Metadata: {}
 uid: az_network_lb_probe
 name: az network lb probe
@@ -234,4 +240,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/3e4d2600fa4af979083b93441662fc49451a435b/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  updated_at: 11/29/2016 12:59:48 AM
+  ms.date: 11/29/2016

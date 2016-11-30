@@ -1,6 +1,8 @@
+htmlId: inbound-nat-pool
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --backend-port
     isRequired: true
@@ -27,7 +29,7 @@ children:
     summary: ''
     description: ''
     parameterValueGroup:
-    - udp, tcp
+    - Tcp, Udp
   - name: --resource-group -g
     isRequired: true
     summary: Name of resource group.
@@ -46,7 +48,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -56,9 +58,10 @@ children:
   uid: az_network_lb_inbound-nat-pool_create
   name: az network lb inbound-nat-pool create
   description: ''
-  summary: ''
+  summary: Create a new load balancer inbound NAT address pool.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -83,7 +86,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -93,9 +96,10 @@ children:
   uid: az_network_lb_inbound-nat-pool_delete
   name: az network lb inbound-nat-pool delete
   description: ''
-  summary: ''
+  summary: Delete a load balancer inbound NAT address pool.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -116,7 +120,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -126,9 +130,10 @@ children:
   uid: az_network_lb_inbound-nat-pool_list
   name: az network lb inbound-nat-pool list
   description: ''
-  summary: ''
+  summary: List inbound NAT address pools in a load balancer.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -153,7 +158,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -163,9 +168,10 @@ children:
   uid: az_network_lb_inbound-nat-pool_show
   name: az network lb inbound-nat-pool show
   description: ''
-  summary: ''
+  summary: Show details of a load balancer inbound NAT address pool.
   Metadata: {}
-- examples: []
+- htmlId: update
+  examples: []
   parameters:
   - name: --backend-port
     summary: Port number.
@@ -183,7 +189,19 @@ children:
     summary: ''
     description: ''
     parameterValueGroup:
-    - udp, tcp
+    - Tcp, Udp
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --lb-name
+    summary: The load balancer name.
+    description: ''
+  - name: --name -n
+    summary: The name of the inbound NAT pool.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
     description: ''
@@ -204,36 +222,26 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --lb-name
-    summary: The load balancer name.
-    description: ''
-  - name: --name -n
-    summary: The name of the inbound NAT pool.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_network_lb_inbound-nat-pool_update
   name: az network lb inbound-nat-pool update
   description: ''
-  summary: ''
+  summary: Update a load balancer inbound NAT address pool.
   Metadata: {}
 uid: az_network_lb_inbound-nat-pool
 name: az network lb inbound-nat-pool
 description: ''
-summary: Manage LB inbound NAT address pools.
+summary: Manage load balancer inbound NAT address pools.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/3e4d2600fa4af979083b93441662fc49451a435b/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  updated_at: 11/29/2016 12:59:48 AM
+  ms.date: 11/29/2016

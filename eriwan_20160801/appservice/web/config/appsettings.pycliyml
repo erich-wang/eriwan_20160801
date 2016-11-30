@@ -1,6 +1,8 @@
+htmlId: appsettings
 examples: []
 children:
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --setting-names
     isRequired: true
@@ -9,6 +11,15 @@ children:
   - name: --slot
     summary: The name of the slot. Default to the productions slot if not specified.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the web.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -20,32 +31,33 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the web app.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
-  uid: az_webapp_config_appsettings_delete
-  name: az webapp config appsettings delete
+  uid: az_appservice_web_config_appsettings_delete
+  name: az appservice web config appsettings delete
   description: ''
-  summary: ''
+  summary: Delete application settings.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --slot
     summary: The name of the slot. Default to the productions slot if not specified.
     description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the web.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -57,35 +69,36 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the web app.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
-  uid: az_webapp_config_appsettings_show
-  name: az webapp config appsettings show
+  uid: az_appservice_web_config_appsettings_show
+  name: az appservice web config appsettings show
   description: ''
-  summary: ''
+  summary: Show application settings.
   Metadata: {}
-- examples: []
+- htmlId: update
+  examples: []
   parameters:
   - name: --settings
     isRequired: true
-    summary: Space separated app settings in a format of 'name'='value'.
+    summary: Space separated app settings in a format of <name>=<value>.
     description: ''
   - name: --slot
     summary: The name of the slot. Default to the productions slot if not specified.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the web.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -98,33 +111,26 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the web app.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
-  uid: az_webapp_config_appsettings_update
-  name: az webapp config appsettings update
+  uid: az_appservice_web_config_appsettings_update
+  name: az appservice web config appsettings update
   description: ''
-  summary: ''
+  summary: Create or update application settings.
   Metadata: {}
-uid: az_webapp_config_appsettings
-name: az webapp config appsettings
+uid: az_appservice_web_config_appsettings
+name: az appservice web config appsettings
 description: ''
-summary: ''
+summary: Commands to configure application settings.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
-  doc_source_url_path: src/command_modules/azure-cli-webapp/azure/cli/command_modules/webapp/_help.py
-  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-webapp/azure/cli/command_modules/webapp/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  doc_source_url_path: src/command_modules/azure-cli-appservice/azure/cli/command_modules/appservice/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-appservice/azure/cli/command_modules/appservice/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/blob/487f0196fc30715f5cf70b7c781185b5c2a5bf18/src/command_modules/azure-cli-appservice/azure/cli/command_modules/appservice/_help.py
+  updated_at: 11/15/2016 10:24:07 PM
+  ms.date: 11/15/2016

@@ -1,6 +1,8 @@
+htmlId: image
 examples: []
 children:
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --all
     summary: Retrieve all versions of images from all publishers.
@@ -28,7 +30,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -40,7 +42,8 @@ children:
   description: ''
   summary: Vm image list.
   Metadata: {}
-- examples: []
+- htmlId: list-offers
+  examples: []
   parameters:
   - name: --location -l
     isRequired: true
@@ -48,7 +51,7 @@ children:
     description: ''
   - name: --publisher-name
     isRequired: true
-    summary: ''
+    summary: A valid image publisher.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -61,7 +64,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -71,9 +74,10 @@ children:
   uid: az_vm_image_list-offers
   name: az vm image list-offers
   description: ''
-  summary: Gets a list of virtual machine image offers.
+  summary: Gets a list of virtual machine image offers for the specified location and publisher.
   Metadata: {}
-- examples: []
+- htmlId: list-publishers
+  examples: []
   parameters:
   - name: --location -l
     isRequired: true
@@ -90,7 +94,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -100,9 +104,10 @@ children:
   uid: az_vm_image_list-publishers
   name: az vm image list-publishers
   description: ''
-  summary: Gets a list of virtual machine image publishers.
+  summary: Gets a list of virtual machine image publishers for the specified Azure location.
   Metadata: {}
-- examples: []
+- htmlId: list-skus
+  examples: []
   parameters:
   - name: --location -l
     isRequired: true
@@ -110,11 +115,11 @@ children:
     description: ''
   - name: --offer
     isRequired: true
-    summary: ''
+    summary: A valid image publisher offer.
     description: ''
   - name: --publisher-name
     isRequired: true
-    summary: ''
+    summary: A valid image publisher.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -127,7 +132,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -137,9 +142,10 @@ children:
   uid: az_vm_image_list-skus
   name: az vm image list-skus
   description: ''
-  summary: Gets a list of virtual machine image skus.
+  summary: Gets a list of virtual machine image SKUs for the specified location, publisher, and offer.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --location -l
     isRequired: true
@@ -147,19 +153,19 @@ children:
     description: ''
   - name: --offer
     isRequired: true
-    summary: ''
+    summary: A valid image publisher offer.
     description: ''
   - name: --publisher-name
     isRequired: true
-    summary: ''
+    summary: A valid image publisher.
     description: ''
   - name: --skus
     isRequired: true
-    summary: ''
+    summary: A valid image SKU.
     description: ''
   - name: --version
     isRequired: true
-    summary: ''
+    summary: A valid image SKU version.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -172,7 +178,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -192,4 +198,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/487f0196fc30715f5cf70b7c781185b5c2a5bf18/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  updated_at: 11/15/2016 10:24:07 PM
+  ms.date: 11/15/2016

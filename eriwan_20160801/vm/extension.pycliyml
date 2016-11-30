@@ -1,25 +1,9 @@
+htmlId: extension
 examples: []
 children:
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
     description: ''
@@ -32,13 +16,6 @@ children:
   - name: --vm-name
     summary: The name of the virtual machine.
     description: ''
-  uid: az_vm_extension_delete
-  name: az vm extension delete
-  description: ''
-  summary: The operation to delete the extension.
-  Metadata: {}
-- examples: []
-  parameters:
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -50,13 +27,21 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  uid: az_vm_extension_delete
+  name: az vm extension delete
+  description: ''
+  summary: The operation to delete the extension.
+  Metadata: {}
+- htmlId: list
+  examples: []
+  parameters:
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
     description: ''
@@ -66,31 +51,6 @@ children:
   - name: --vm-name
     summary: The name of the virtual machine.
     description: ''
-  uid: az_vm_extension_list
-  name: az vm extension list
-  description: ''
-  summary: ''
-  Metadata: {}
-- examples:
-  - title: Add a new linux user
-    code: az vm extension set -n VMAccessForLinux --publisher Microsoft.OSTCExtensions --version 1.4 --vm-name myvm --resource-group mygroup --protected-settings '{"username":"user1", "ssh_key":"ssh_rsa ..."}'
-  parameters:
-  - name: --publisher
-    isRequired: true
-    summary: The name of extension publisher.
-    description: ''
-  - name: --no-auto-upgrade
-    summary: By doing this, extension system will not pick the highest minor version for the specified version number, and will not auto update to the latest build/revision number on any VM updates in future.
-    description: ''
-  - name: --protected-settings
-    summary: Protected settings or a file path with such contents.
-    description: ''
-  - name: --settings
-    summary: Public settings or a file path with such contents.
-    description: ''
-  - name: --version
-    summary: The version of extension.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -102,12 +62,38 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_vm_extension_list
+  name: az vm extension list
+  description: ''
+  summary: ''
+  Metadata: {}
+- htmlId: set
+  examples:
+  - title: Add a new linux user
+    code: az vm extension set -n VMAccessForLinux --publisher Microsoft.OSTCExtensions --version 1.4 --vm-name myvm --resource-group mygroup --protected-settings '{"username":"user1", "ssh_key":"ssh_rsa ..."}'
+  parameters:
+  - name: --publisher
+    isRequired: true
+    summary: The name of extension publisher.
+    description: ''
+  - name: --no-auto-upgrade
+    summary: By doing this, extension system will not pick the highest minor version for the specified version number, and will not auto update to the latest build/revision number on any scale set updates in future.
+    description: ''
+  - name: --protected-settings
+    summary: Protected settings or a file path with such contents.
+    description: ''
+  - name: --settings
+    summary: Public settings or a file path with such contents.
+    description: ''
+  - name: --version
+    summary: The version of extension.
     description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
@@ -121,16 +107,6 @@ children:
   - name: --vm-name
     summary: The name of the virtual machine.
     description: ''
-  uid: az_vm_extension_set
-  name: az vm extension set
-  description: ''
-  summary: Create/update extensions for a VM in a resource group.
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --expand
-    summary: The expand expression to apply on the operation.
-    description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
     description: ''
@@ -142,12 +118,23 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_vm_extension_set
+  name: az vm extension set
+  description: ''
+  summary: Create/update extensions for a VM in a resource group.
+  Metadata: {}
+- htmlId: show
+  examples: []
+  parameters:
+  - name: --expand
+    summary: The expand expression to apply on the operation.
     description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
@@ -160,6 +147,24 @@ children:
     description: ''
   - name: --vm-name
     summary: The name of the virtual machine.
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   uid: az_vm_extension_show
   name: az vm extension show
@@ -174,4 +179,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/487f0196fc30715f5cf70b7c781185b5c2a5bf18/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+  updated_at: 11/15/2016 10:24:07 PM
+  ms.date: 11/15/2016

@@ -1,217 +1,212 @@
+htmlId: acr
 examples: []
 children:
-- examples: []
+- htmlId: check-name
+  examples: []
   parameters:
-  - name: --bandwidth-in-mbps
+  - name: --name -n
     isRequired: true
-    summary: Bandwidth in Mbps of the circuit being created. It must exactly match one of the available bandwidth offers List ExpressRoute Service Providers API call.
+    summary: The name of the container registry.
     description: ''
-  - name: --circuit-name
-    isRequired: true
-    summary: Name of the ExpressRoute circuit.
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
     description: ''
-  - name: --peer-asn
-    isRequired: true
-    summary: The autonomous system number of the customer/connectivity provider.
+  - name: --help -h
+    summary: Show this help message and exit.
     description: ''
-  - name: --peering-location
-    isRequired: true
-    summary: Name of the peering location and not the ARM resource location. It must exactly match one of the available peering locations from List ExpressRoute Service Providers API call.
+  - name: --output -o
+    summary: Output format.
     description: ''
-  - name: --primary-peer-address-prefix
-    isRequired: true
-    summary: /30 subnet used to configure IP addresses for interfaces on Link1.
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --secondary-peer-address-prefix
-    isRequired: true
-    summary: /30 subnet used to configure IP addresses for interfaces on Link2.
-    description: ''
-  - name: --service-provider-name
-    isRequired: true
-    summary: Name of the ExpressRoute Service Provider. It must exactly match one of the Service Providers from List ExpressRoute Service Providers API call.
-    description: ''
-  - name: --vlan-id
-    isRequired: true
-    summary: Specifies the identifier that is used to identify the customer.
-    description: ''
+  uid: az_acr_check-name
+  name: az acr check-name
+  description: ''
+  summary: Checks whether the container registry name is available for use.
+  Metadata: {}
+- htmlId: create
+  examples:
+  - title: Create a container registry with a new storage account.
+    code: az acr create -n myRegistry -g myResourceGroup -l southcentralus
+  - title: Create a container registry with an existing storage account.
+    code: az acr create -n myRegistry -g myResourceGroup -l southcentralus --storage-account-name myStorageAccount
+  parameters:
   - name: --location -l
+    isRequired: true
     summary: Location.
     description: ''
-  - name: --peering-type
-    summary: BGP peering type for the Circuit.
+  - name: --name -n
+    isRequired: true
+    summary: The name of the container registry.
     description: ''
-    defaultValue: AzurePrivatePeering
-  - name: --sku-family
-    summary: Chosen SKU family of ExpressRoute circuit.
+  - name: --resource-group -g
+    isRequired: true
+    summary: Name of resource group.
     description: ''
-    defaultValue: MeteredData
-  - name: --sku-tier
-    summary: Chosen SKU Tier of ExpressRoute circuit.
+  - name: --admin-enabled
+    summary: Indicates whether the admin user is enabled.
     description: ''
-    defaultValue: Standard
+    defaultValue: false
+    parameterValueGroup:
+    - false, true
+  - name: --storage-account-name
+    summary: The name of an existing storage account.
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_acr_create
+  name: az acr create
+  description: ''
+  summary: Creates a container registry.
+  Metadata: {}
+- htmlId: delete
+  examples: []
+  parameters:
+  - name: --name -n
+    isRequired: true
+    summary: The name of the container registry.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_acr_delete
+  name: az acr delete
+  description: ''
+  summary: Deletes a container registry.
+  Metadata: {}
+- htmlId: list
+  examples:
+  - title: List container registries and show result in a table.
+    code: az acr list -o table
+  - title: List container registries in a resource group and show result in a table.
+    code: az acr list -g myResourceGroup -o table
+  parameters:
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_acr_list
+  name: az acr list
+  description: ''
+  summary: Lists all the available container registries under the current subscription.
+  Metadata: {}
+- htmlId: show
+  examples: []
+  parameters:
+  - name: --name -n
+    isRequired: true
+    summary: The name of the container registry.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_acr_show
+  name: az acr show
+  description: ''
+  summary: Gets the properties of the specified container registry.
+  Metadata: {}
+- htmlId: update
+  examples:
+  - title: Update tags for a container registry
+    code: az acr update -n myRegistry --tags key1=value1 key2=value2
+  - title: Update storage account for a container registry
+    code: az acr update -n myRegistry --storage-account-name myStorageAccount
+  - title: Enable admin user for a container registry
+    code: az acr update -n myRegistry --admin-enabled true
+  parameters:
+  - name: --name -n
+    isRequired: true
+    summary: The name of the container registry.
+    description: ''
+  - name: --admin-enabled
+    summary: Indicates whether the admin user is enabled.
+    description: ''
+    parameterValueGroup:
+    - false, true
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
+  - name: --storage-account-name
+    summary: The name of an existing storage account.
+    description: ''
   - name: --tags
-    summary: Multiple semicolon separated tags in 'key[=value]' format.  Use "" to clear existing tags.
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  uid: az_network_express-route_circuit-peering_create
-  name: az network express-route circuit-peering create
-  description: ''
-  summary: Create or update a virtual machine.
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --circuit-name
-    isRequired: true
-    summary: The name of the express route circuit.
-    description: ''
-  - name: --name -n
-    isRequired: true
-    summary: The name of the peering.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  uid: az_network_express-route_circuit-peering_delete
-  name: az network express-route circuit-peering delete
-  description: ''
-  summary: >-
-    The delete peering operation deletes the specified peering from the
-
-    ExpressRouteCircuit.
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --circuit-name
-    isRequired: true
-    summary: The name of the circuit.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  uid: az_network_express-route_circuit-peering_list
-  name: az network express-route circuit-peering list
-  description: ''
-  summary: >-
-    The List peering operation retrieves all the peerings in an
-
-    ExpressRouteCircuit.
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --circuit-name
-    isRequired: true
-    summary: The name of the express route circuit.
-    description: ''
-  - name: --name -n
-    isRequired: true
-    summary: The name of the peering.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
-    description: ''
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
-    description: ''
-  uid: az_network_express-route_circuit-peering_show
-  name: az network express-route circuit-peering show
-  description: ''
-  summary: >-
-    The GET peering operation retrieves the specified authorization from
-
-    the ExpressRouteCircuit.
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --circuit-name
-    isRequired: true
-    summary: The name of the express route circuit.
-    description: ''
-  - name: --name -n
-    isRequired: true
-    summary: The name of the peering.
-    description: ''
-  - name: --peering-parameters
-    isRequired: true
-    summary: Parameters supplied to the create/update ExpressRouteCircuit Peering operation.
-    description: ''
-  - name: --resource-group -g
-    isRequired: true
-    summary: Name of resource group.
+    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
@@ -233,24 +228,26 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  uid: az_network_express-route_circuit-peering_update
-  name: az network express-route circuit-peering update
+  uid: az_acr_update
+  name: az acr update
   description: ''
-  summary: ''
+  summary: Updates a container registry.
   Metadata: {}
-uid: az_network_express-route_circuit-peering
-name: az network express-route circuit-peering
+uid: az_acr
+name: az acr
 description: ''
-summary: Manage express route peering.
+summary: Commands to manage Azure container registries.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
-  doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  doc_source_url_path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/blob/91bbc5c1da03fb32665f9e65d8c2b7cb54064abd/src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
+  updated_at: 11/17/2016 10:23:17 PM
+  ms.date: 11/17/2016

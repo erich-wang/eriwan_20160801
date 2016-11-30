@@ -1,13 +1,20 @@
+htmlId: container
 examples: []
 children:
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
-  - name: --log-file
-    summary: The downloaded zipped log file path.
-    description: ''
-    defaultValue: webapp_logs.zip
   - name: --slot
     summary: The name of the slot. Default to the productions slot if not specified.
+    description: ''
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --name -n
+    summary: Name of the web.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -20,96 +27,32 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the web app.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
-  uid: az_webapp_log_download
-  name: az webapp log download
+  uid: az_appservice_web_config_container_delete
+  name: az appservice web config container delete
   description: ''
-  summary: Download historical logs as a zip file.
+  summary: Delete container settings.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
-  - name: --application-logging
-    summary: Configure application logging to file system.
-    description: ''
-    parameterValueGroup:
-    - on, off
-  - name: --detailed-error-messages
-    summary: Configure detailed error messages.
-    description: ''
-    parameterValueGroup:
-    - on, off
-  - name: --failed-request-tracing
-    summary: Configure failed request tracing.
-    description: ''
-    parameterValueGroup:
-    - on, off
-  - name: --level
-    summary: Logging level.
-    description: ''
-    parameterValueGroup:
-    - error, warning, information, verbose
   - name: --slot
     summary: The name of the slot. Default to the productions slot if not specified.
-    description: ''
-  - name: --web-server-logging
-    summary: Configure Web server logging.
-    description: ''
-    parameterValueGroup:
-    - off, storage, filesystem
-  - name: --debug
-    summary: Increase logging verbosity to show all debug logs.
-    description: ''
-  - name: --help -h
-    summary: Show this help message and exit.
-    description: ''
-  - name: --output -o
-    summary: Output format.
-    description: ''
-    defaultValue: json
-    parameterValueGroup:
-    - json, tsv, list, table, jsonc
-  - name: --query
-    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
-    description: ''
-  - name: --verbose
-    summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
     description: ''
   - name: --name -n
-    summary: The name of the web app.
+    summary: Name of the web.
     description: ''
   - name: --resource-group -g
     summary: Name of resource group.
-    description: ''
-  uid: az_webapp_log_set
-  name: az webapp log set
-  description: ''
-  summary: ''
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --provider
-    summary: Scope the live traces to certain providers/folders, for example:'application', 'http' for server log, 'kudu/trace', etc.
-    description: ''
-  - name: --slot
-    summary: The name of the slot. Default to the productions slot if not specified.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -122,33 +65,76 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
+  uid: az_appservice_web_config_container_show
+  name: az appservice web config container show
+  description: ''
+  summary: Show container settings.
+  Metadata: {}
+- htmlId: update
+  examples: []
+  parameters:
+  - name: --docker-custom-image-name -c
+    summary: The container custom image name and optionally the tag name.
+    description: ''
+  - name: --docker-registry-server-password -p
+    summary: The container registry server password.
+    description: ''
+  - name: --docker-registry-server-url -r
+    summary: The container registry server url.
+    description: ''
+  - name: --docker-registry-server-user -u
+    summary: The container registry server username.
+    description: ''
+  - name: --slot
+    summary: The name of the slot. Default to the productions slot if not specified.
+    description: ''
   - name: --ids
     summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
     description: ''
   - name: --name -n
-    summary: The name of the web app.
+    summary: Name of the web.
     description: ''
   - name: --resource-group -g
     summary: Name of resource group.
     description: ''
-  uid: az_webapp_log_tail
-  name: az webapp log tail
+  - name: --debug
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup:
+    - json, jsonc, list, table, tsv
+  - name: --query
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  uid: az_appservice_web_config_container_update
+  name: az appservice web config container update
   description: ''
-  summary: ''
+  summary: Update container settings.
   Metadata: {}
-uid: az_webapp_log
-name: az webapp log
+uid: az_appservice_web_config_container
+name: az appservice web config container
 description: ''
-summary: ''
+summary: Commands to configure container specific application settings.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
-  doc_source_url_path: src/command_modules/azure-cli-webapp/azure/cli/command_modules/webapp/_help.py
-  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-webapp/azure/cli/command_modules/webapp/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  doc_source_url_path: src/command_modules/azure-cli-appservice/azure/cli/command_modules/appservice/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-appservice/azure/cli/command_modules/appservice/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/blob/487f0196fc30715f5cf70b7c781185b5c2a5bf18/src/command_modules/azure-cli-appservice/azure/cli/command_modules/appservice/_help.py
+  updated_at: 11/15/2016 10:24:07 PM
+  ms.date: 11/15/2016

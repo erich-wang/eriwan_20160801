@@ -1,10 +1,12 @@
+htmlId: ssl-cert
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
-  - name: --cert-file
+  - name: --cert-data
     isRequired: true
-    summary: The path to the PFX certificate file.
+    summary: The contents of the PFX certificate file.
     description: ''
   - name: --cert-password
     isRequired: true
@@ -33,7 +35,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -43,9 +45,10 @@ children:
   uid: az_network_application-gateway_ssl-cert_create
   name: az network application-gateway ssl-cert create
   description: ''
-  summary: Create or update a virtual machine.
+  summary: Upload an SSL certificate for an application gateway.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --gateway-name
     isRequired: true
@@ -70,7 +73,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -80,9 +83,10 @@ children:
   uid: az_network_application-gateway_ssl-cert_delete
   name: az network application-gateway ssl-cert delete
   description: ''
-  summary: ''
+  summary: Delete an application gateway SSL certificate.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -103,7 +107,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -113,9 +117,10 @@ children:
   uid: az_network_application-gateway_ssl-cert_list
   name: az network application-gateway ssl-cert list
   description: ''
-  summary: ''
+  summary: List SSL certificates in an application gateway.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --gateway-name
     isRequired: true
@@ -140,7 +145,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -150,7 +155,7 @@ children:
   uid: az_network_application-gateway_ssl-cert_show
   name: az network application-gateway ssl-cert show
   description: ''
-  summary: ''
+  summary: Show details of an application gateway SSL certificate.
   Metadata: {}
 uid: az_network_application-gateway_ssl-cert
 name: az network application-gateway ssl-cert
@@ -160,4 +165,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/3e4d2600fa4af979083b93441662fc49451a435b/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  updated_at: 11/29/2016 12:59:48 AM
+  ms.date: 11/29/2016

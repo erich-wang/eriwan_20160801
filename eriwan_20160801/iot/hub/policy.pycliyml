@@ -1,9 +1,15 @@
+htmlId: policy
 examples: []
 children:
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
-  - name: --slot
-    summary: The name of the slot. Default to the productions slot if not specified.
+  - name: --hub-name
+    isRequired: true
+    summary: IoT Hub name.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -16,31 +22,31 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+  uid: az_iot_hub_policy_list
+  name: az iot hub policy list
+  description: ''
+  summary: List all shared access policies of an IoT Hub.
+  Metadata: {}
+- htmlId: show
+  examples: []
+  parameters:
+  - name: --hub-name
+    isRequired: true
+    summary: IoT Hub name.
     description: ''
   - name: --name -n
-    summary: The name of the web app.
+    isRequired: true
+    summary: Share access policy name.
     description: ''
   - name: --resource-group -g
     summary: Name of resource group.
-    description: ''
-  uid: az_webapp_git_enable-local
-  name: az webapp git enable-local
-  description: ''
-  summary: ''
-  Metadata: {}
-- examples: []
-  parameters:
-  - name: --slot
-    summary: The name of the slot. Default to the productions slot if not specified.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -53,33 +59,26 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    summary: The name of the web app.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
-  uid: az_webapp_git_show-url
-  name: az webapp git show-url
+  uid: az_iot_hub_policy_show
+  name: az iot hub policy show
   description: ''
-  summary: ''
+  summary: Get a shared access policy of an IoT Hub.
   Metadata: {}
-uid: az_webapp_git
-name: az webapp git
+uid: az_iot_hub_policy
+name: az iot hub policy
 description: ''
-summary: ''
+summary: Manage shared access policies of an IoT Hub.
 Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
-  doc_source_url_path: src/command_modules/azure-cli-webapp/azure/cli/command_modules/webapp/_help.py
-  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-webapp/azure/cli/command_modules/webapp/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  doc_source_url_path: src/command_modules/azure-cli-iot/azure/cli/command_modules/iot/_help.py
+  original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-iot/azure/cli/command_modules/iot/_help.py
+  gitcommit: https://github.com/Azure/azure-cli/blob/119d95b3fb6b68782d11fb8e7934b568cdc1a24a/src/command_modules/azure-cli-iot/azure/cli/command_modules/iot/_help.py
+  updated_at: 11/18/2016 4:37:16 PM
+  ms.date: 11/18/2016

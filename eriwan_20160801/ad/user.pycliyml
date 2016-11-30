@@ -1,6 +1,8 @@
+htmlId: user
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --display-name
     isRequired: true
@@ -12,7 +14,7 @@ children:
     description: ''
   - name: --user-principal-name
     isRequired: true
-    summary: The user principal name (<a href="mailto:someuser@contoso.com">someuser@contoso.com</a>). It must contain one of the verified domains for the tenant.
+    summary: The user principal name (someuser@contoso.com). It must contain one of the verified domains for the tenant.
     description: ''
   - name: --force-change-password-next-login
     summary: ''
@@ -34,7 +36,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -46,7 +48,8 @@ children:
   description: ''
   summary: Request parameters for create a new work or school account user.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --upn-or-object-id
     isRequired: true
@@ -63,7 +66,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -72,13 +75,11 @@ children:
     description: ''
   uid: az_ad_user_delete
   name: az ad user delete
-  description: >-
-    Reference:
-
-    <a href="https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#DeleteUser">https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#DeleteUser</a>.
+  description: 'Reference: <a href="https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#DeleteUser">https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#DeleteUser</a>.'
   summary: Delete a user.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --display-name
     summary: Object's display name or its prefix.
@@ -87,7 +88,7 @@ children:
     summary: OData filter.
     description: ''
   - name: --upn
-    summary: User principal name, e.g. <a href="mailto:john.doe@contoso.com">john.doe@contoso.com</a>.
+    summary: User principal name, e.g. john.doe@contoso.com.
     description: ''
   - name: --debug
     summary: Increase logging verbosity to show all debug logs.
@@ -100,7 +101,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -112,7 +113,8 @@ children:
   description: ''
   summary: ''
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --upn-or-object-id
     isRequired: true
@@ -129,7 +131,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -138,10 +140,7 @@ children:
     description: ''
   uid: az_ad_user_show
   name: az ad user show
-  description: >-
-    Reference:
-
-    <a href="https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#GetAUser">https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#GetAUser</a>.
+  description: 'Reference: <a href="https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#GetAUser">https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#GetAUser</a>.'
   summary: Gets user information from the directory.
   Metadata: {}
 uid: az_ad_user
@@ -152,4 +151,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-role/azure/cli/command_modules/role/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-role/azure/cli/command_modules/role/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/487f0196fc30715f5cf70b7c781185b5c2a5bf18/src/command_modules/azure-cli-role/azure/cli/command_modules/role/_help.py
+  updated_at: 11/15/2016 10:24:07 PM
+  ms.date: 11/15/2016

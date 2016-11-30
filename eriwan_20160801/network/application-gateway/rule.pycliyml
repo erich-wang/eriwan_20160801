@@ -1,6 +1,8 @@
+htmlId: rule
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --address-pool
     isRequired: true
@@ -44,7 +46,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -54,9 +56,10 @@ children:
   uid: az_network_application-gateway_rule_create
   name: az network application-gateway rule create
   description: ''
-  summary: ''
+  summary: Create a new application gateway rule.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --gateway-name
     isRequired: true
@@ -81,7 +84,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -91,9 +94,10 @@ children:
   uid: az_network_application-gateway_rule_delete
   name: az network application-gateway rule delete
   description: ''
-  summary: ''
+  summary: Delete an application gateway rule.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --name -n
     isRequired: true
@@ -114,7 +118,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -124,9 +128,10 @@ children:
   uid: az_network_application-gateway_rule_list
   name: az network application-gateway rule list
   description: ''
-  summary: ''
+  summary: List rules in an application gateway.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --gateway-name
     isRequired: true
@@ -151,7 +156,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -161,7 +166,7 @@ children:
   uid: az_network_application-gateway_rule_show
   name: az network application-gateway rule show
   description: ''
-  summary: ''
+  summary: Show details of an application gateway rule.
   Metadata: {}
 uid: az_network_application-gateway_rule
 name: az network application-gateway rule
@@ -171,4 +176,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/3e4d2600fa4af979083b93441662fc49451a435b/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  updated_at: 11/29/2016 12:59:48 AM
+  ms.date: 11/29/2016

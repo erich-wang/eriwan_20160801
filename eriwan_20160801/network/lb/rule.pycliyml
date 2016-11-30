@@ -1,6 +1,8 @@
+htmlId: rule
 examples: []
 children:
-- examples: []
+- htmlId: create
+  examples: []
   parameters:
   - name: --backend-pool-name
     isRequired: true
@@ -31,7 +33,7 @@ children:
     summary: ''
     description: ''
     parameterValueGroup:
-    - udp, tcp
+    - Tcp, Udp
   - name: --resource-group -g
     isRequired: true
     summary: Name of resource group.
@@ -41,7 +43,7 @@ children:
     description: ''
     defaultValue: false
     parameterValueGroup:
-    - true, false
+    - false, true
   - name: --idle-timeout
     summary: Idle timeout in minutes.
     description: ''
@@ -50,7 +52,7 @@ children:
     description: ''
     defaultValue: default
     parameterValueGroup:
-    - default, sourceip, sourceipprotocol
+    - Default, SourceIP, SourceIPProtocol
   - name: --probe-name
     summary: ''
     description: ''
@@ -65,7 +67,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -75,9 +77,10 @@ children:
   uid: az_network_lb_rule_create
   name: az network lb rule create
   description: ''
-  summary: ''
+  summary: Create a new load balancing rule.
   Metadata: {}
-- examples: []
+- htmlId: delete
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -102,7 +105,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -112,9 +115,10 @@ children:
   uid: az_network_lb_rule_delete
   name: az network lb rule delete
   description: ''
-  summary: ''
+  summary: Delete a load balancing rule.
   Metadata: {}
-- examples: []
+- htmlId: list
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -135,7 +139,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -145,9 +149,10 @@ children:
   uid: az_network_lb_rule_list
   name: az network lb rule list
   description: ''
-  summary: ''
+  summary: List load balancing rules in a load balancer.
   Metadata: {}
-- examples: []
+- htmlId: show
+  examples: []
   parameters:
   - name: --lb-name
     isRequired: true
@@ -172,7 +177,7 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
@@ -182,9 +187,10 @@ children:
   uid: az_network_lb_rule_show
   name: az network lb rule show
   description: ''
-  summary: ''
+  summary: Show details of a load balancing rule.
   Metadata: {}
-- examples: []
+- htmlId: update
+  examples: []
   parameters:
   - name: --backend-pool-name
     summary: The name of the backend address pool.
@@ -196,7 +202,7 @@ children:
     summary: Enable floating IP.
     description: ''
     parameterValueGroup:
-    - true, false
+    - false, true
   - name: --frontend-ip-name
     summary: The name of the frontend IP configuration.
     description: ''
@@ -211,7 +217,7 @@ children:
     description: ''
     defaultValue: default
     parameterValueGroup:
-    - default, sourceip, sourceipprotocol
+    - Default, SourceIP, SourceIPProtocol
   - name: --probe-name
     summary: ''
     description: ''
@@ -219,7 +225,19 @@ children:
     summary: ''
     description: ''
     parameterValueGroup:
-    - udp, tcp
+    - Tcp, Udp
+  - name: --ids
+    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
+    description: ''
+  - name: --lb-name
+    summary: The load balancer name.
+    description: ''
+  - name: --name -n
+    summary: The name of the load balancing rule.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group.
+    description: ''
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
     description: ''
@@ -240,29 +258,17 @@ children:
     description: ''
     defaultValue: json
     parameterValueGroup:
-    - json, tsv, list, table, jsonc
+    - json, jsonc, list, table, tsv
   - name: --query
     summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
     description: ''
   - name: --verbose
     summary: Increase logging verbosity. Use --debug for full debug logs.
     description: ''
-  - name: --ids
-    summary: One or more resource IDs. If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --lb-name
-    summary: The load balancer name.
-    description: ''
-  - name: --name -n
-    summary: The name of the load balancing rule.
-    description: ''
-  - name: --resource-group -g
-    summary: Name of resource group.
-    description: ''
   uid: az_network_lb_rule_update
   name: az network lb rule update
   description: ''
-  summary: ''
+  summary: Update a load balancing rule.
   Metadata: {}
 uid: az_network_lb_rule
 name: az network lb rule
@@ -272,4 +278,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/commit/a9c45ec18560b39dbcc930cb4eeb0b6359141a82
+  gitcommit: https://github.com/Azure/azure-cli/blob/3e4d2600fa4af979083b93441662fc49451a435b/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  updated_at: 11/29/2016 12:59:48 AM
+  ms.date: 11/29/2016
